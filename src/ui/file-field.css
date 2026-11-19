@@ -1,0 +1,29 @@
+/* Both states are 56 px tall, so the form does not jump when a file arrives. */
+.hr-file-drop { min-width: 0; }
+.hr-file { position: relative; display: flex; align-items: center; gap: 12px; min-height: 56px; min-width: 0; border-radius: var(--r-control-lg);
+  transition: background-color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out), outline-color var(--dur-fast) var(--ease-out); }
+.hr-file[data-disabled] { opacity: .45; }
+
+/* empty: a small drop target. The dashed outline means "drop here", the one place the kit draws an outline. */
+.hr-file:not([data-filled]) { padding: 8px 10px 8px 14px; border: 1.5px dashed var(--edge); background: var(--bg); }
+.hr-file__icon { flex: none; width: 20px; height: 20px; color: var(--ink-2); }
+.hr-file__prompt { flex: 1; min-width: 0; font: 500 14px/20px var(--font-ui); color: var(--ink); }
+.hr-file:not([data-filled])[data-drag] { background: var(--accent-tint); border-color: var(--ink); }
+.hr-field[data-invalid] .hr-file:not([data-filled]) { background: var(--fail-tint); border-color: var(--fail); }
+.hr-field[data-invalid] .hr-file:not([data-filled]) .hr-file__icon { color: var(--fail); }
+
+/* holding a file: preview, then the name over the two actions */
+.hr-file[data-filled] { align-items: flex-start; }
+.hr-file__preview { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 56px; height: 56px; overflow: hidden; border-radius: var(--r-control);
+  background: var(--sunk); color: var(--ink-2); }
+.hr-file__preview > img { display: block; width: 100%; height: 100%; object-fit: cover; }
+/* an overlay image is often a logo on a clear background: show all of it */
+.hr-file__preview[data-kind="image"] > img { object-fit: contain; }
+.hr-file__preview > svg { width: 20px; height: 20px; }
+.hr-file__body { display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 0; }
+.hr-file__meta { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 8px; min-width: 0; }
+.hr-file__name { min-width: 0; font: 600 14px/20px var(--font-ui); color: var(--ink); overflow-wrap: anywhere; }
+.hr-file__size { flex: none; font: 400 12.5px/20px var(--font-ui); color: var(--ink-3); }
+.hr-file__actions { display: flex; align-items: center; gap: 6px; }
+/* a file dragged over a field that already holds one will replace it */
+.hr-file[data-filled][data-drag] { outline: 1.5px dashed var(--ink); outline-offset: 6px; background: var(--accent-tint); }

@@ -1,0 +1,7 @@
+.hr-skeleton { display: block; background: var(--line); border-radius: var(--r-sm); animation: hr-pulse var(--dur-pulse) var(--ease-in-out) infinite; }
+.hr-skeleton[data-shape="text"] { height: 12px; width: 100%; }
+.hr-skeleton[data-shape="thumb"] { width: 36px; aspect-ratio: 9 / 16; border-radius: var(--r-key); }
+.hr-skeleton[data-shape="button"] { height: var(--h-md); width: 112px; border-radius: var(--r-control); }
+.hr-skeleton[data-shape="avatar"] { width: 28px; height: 28px; border-radius: var(--r-full); }
+.hr-skeleton[data-shape="card"] { height: 96px; width: 100%; border-radius: var(--r-card); }
+.hr-skeleton[data-shape="block"] { height: 40px; width: 100%; border-radius: var(--r-control); }

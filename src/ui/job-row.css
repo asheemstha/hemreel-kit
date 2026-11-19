@@ -1,0 +1,12 @@
+.hr-joblist { display: flex; flex-direction: column; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.hr-job { display: flex; align-items: center; gap: 16px; padding: 14px 16px; min-height: 76px; background: var(--card-bg); border-radius: var(--r-card); box-shadow: var(--card-shadow); }
+.hr-job[data-kind="submit"] { background: var(--accent-tint); }
+.hr-job__media { display: flex; gap: 6px; flex: none; }
+.hr-job__media:empty { display: none; }
+.hr-job__media .hr-thumb[data-selected] { margin: 4px; }
+.hr-job__text { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; min-width: 0; flex: 1; }
+.hr-job__title { font: 600 15px/20px var(--font-ui); color: var(--ink); max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hr-job__meta { font: 400 13px/18px var(--font-ui); color: var(--ink-2); }
+.hr-job__strip { margin-top: 6px; }
+.hr-job__slot { flex: none; }
+.hr-job__actions { display: flex; align-items: center; gap: 8px; flex: none; }

@@ -1,0 +1,11 @@
+.hr-drop { display: flex; align-items: center; gap: 14px; min-height: 76px; padding: 12px 14px 12px 18px; border: 1.5px dashed var(--edge); border-radius: var(--r-control-lg);
+  background: var(--bg); transition: background-color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out); }
+.hr-drop__icon { flex: none; width: 26px; height: 26px; color: var(--ink-2); }
+.hr-drop__text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.hr-drop__title { font: 600 14px/20px var(--font-ui); color: var(--ink); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hr-drop__hint { font: 400 12.5px/17px var(--font-ui); color: var(--ink-3); }
+.hr-drop[data-state="drag-over"] { background: var(--accent-tint); border: 1.5px dashed var(--ink); transform: scale(1.01); }
+.hr-drop[data-state="chosen"] { border-style: dashed; background: var(--surface); }
+.hr-drop[data-state="chosen"] .hr-drop__icon { color: var(--ok); }
+.hr-drop[data-state="wrong-type"] { border: 1.5px dashed var(--fail); background: var(--fail-tint); }
+.hr-drop[data-state="wrong-type"] .hr-drop__icon, .hr-drop[data-state="wrong-type"] .hr-drop__hint { color: var(--fail); }

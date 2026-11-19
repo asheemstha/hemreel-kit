@@ -1,0 +1,12 @@
+.hr-textarea { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.hr-textarea__label { font: 600 13px/18px var(--font-ui); color: var(--ink); }
+.hr-textarea__input { display: block; width: 100%; min-height: 66px; padding: 10px 12px; border: 1px solid var(--field-edge); border-radius: var(--r-field);
+  background: var(--field-bg); box-shadow: var(--field-shadow); color: var(--ink); font: 400 14.5px/1.5 var(--font-ui); resize: none;
+  transition: border-color var(--dur-fast) var(--ease-out); }
+.hr-textarea__input::placeholder { color: var(--ink-3); opacity: 1; }
+.hr-textarea__input:hover:not(:disabled) { background: var(--btn2-hover); }
+.hr-textarea__input:disabled { opacity: .45; }
+.hr-textarea[data-invalid] .hr-textarea__input { background: var(--fail-tint); }
+.hr-textarea__footer { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; min-height: 20px; font: 400 12.5px/17px var(--font-ui); color: var(--ink-3); }
+.hr-textarea__error { display: flex; align-items: flex-start; gap: 6px; font: 500 12.5px/17px var(--font-ui); color: var(--fail); }
+.hr-textarea__error > svg { flex: none; width: 14px; height: 14px; margin-top: 1.5px; }

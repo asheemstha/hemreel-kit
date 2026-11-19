@@ -1,0 +1,11 @@
+.hr-kbd { display: inline-flex; align-items: center; justify-content: center; min-width: 20px; height: 20px; padding: 0 5px;
+  border-radius: var(--r-key); border: 0; background: var(--kbd-bg); color: var(--ink-2);
+  font: 500 11.5px/1 var(--font-ui); white-space: nowrap; font-variant-numeric: tabular-nums; }
+/* flat keycaps: a soft fill, no outline, so they read as hints rather than raised keys */
+.hr-kbd[data-tone="accent"] { color: var(--on-accent); background: var(--on-accent-wash); }
+.hr-kbd[data-tone="ink"] { color: var(--on-ink); background: var(--on-ink-wash); }
+.hr-kbd[data-tone="stage"] { color: var(--stage-text); background: var(--stage-track); }
+.hr-kbd[data-hint] { display: none; }
+:root[data-keycaps="all"] .hr-kbd[data-hint] { display: inline-flex; }
+/* layout: hugs its content inside any flex or grid parent; never wider than the parent */
+.hr-kbd { width: fit-content; max-width: 100%; }

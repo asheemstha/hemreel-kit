@@ -1,0 +1,25 @@
+/* layout: hugs its text; never wider than the parent; long names wrap */
+.hr-inline-edit { display: inline-flex; max-width: 100%; min-width: 0; color: var(--ink); font: 500 14px/20px var(--font-ui); }
+.hr-inline-edit[data-size="heading"] { font: var(--text-heading); letter-spacing: -0.01em; }
+.hr-inline-edit[data-size="title"] { font: var(--text-title); letter-spacing: -0.02em; }
+
+/* the text and the field share one box: same padding, radius and type, so starting to edit moves nothing */
+.hr-inline-edit__display { display: inline-flex; align-items: flex-start; gap: 8px; max-width: 100%; margin: 0; padding: 4px 8px; border: 0; border-radius: var(--r-chip);
+  background: transparent; color: inherit; font: inherit; letter-spacing: inherit; text-align: left; cursor: text;
+  transition: background-color var(--dur-fast) var(--ease-out); }
+.hr-inline-edit__display:hover:not(:disabled) { background: var(--sunk); }
+.hr-inline-edit__display:disabled { cursor: default; }
+.hr-inline-edit__text { min-width: 0; overflow-wrap: anywhere; }
+.hr-inline-edit__text[data-empty] { color: var(--ink-3); }
+/* the pencil sits on the first line and only shows when the name can be acted on */
+.hr-inline-edit__pencil { flex: none; width: 16px; height: 1lh; color: var(--ink-3); opacity: 0; transition: opacity var(--dur-fast) var(--ease-out); }
+.hr-inline-edit[data-size="body"] .hr-inline-edit__pencil { width: 14px; }
+.hr-inline-edit__display:hover:not(:disabled) .hr-inline-edit__pencil, .hr-inline-edit__display:focus-visible .hr-inline-edit__pencil { opacity: 1; }
+
+.hr-inline-edit__box { display: inline-grid; max-width: 100%; min-width: 0; }
+.hr-inline-edit__sizer, .hr-inline-edit__input { grid-area: 1 / 1; min-width: 6ch; margin: 0; padding: 4px 8px; border: 0; font: inherit; letter-spacing: inherit; white-space: pre-wrap; overflow-wrap: anywhere; }
+/* room where the pencil was, so the box keeps its width */
+.hr-inline-edit__sizer { visibility: hidden; padding-right: 32px; }
+.hr-inline-edit[data-size="body"] .hr-inline-edit__sizer { padding-right: 30px; }
+.hr-inline-edit__input { width: 100%; height: 100%; resize: none; overflow: hidden; border-radius: var(--r-chip); background: var(--field-bg); color: var(--ink); }
+.hr-inline-edit__input::placeholder { color: var(--ink-3); opacity: 1; }

@@ -1,0 +1,21 @@
+.hr-queue { display: flex; flex-direction: column; gap: 2px; margin: 0; padding: 0; list-style: none; }
+.hr-queue-row { display: flex; align-items: center; gap: 12px; padding: 7px 10px 7px 8px; border-radius: var(--r-control-lg); border: 1px solid transparent;
+  cursor: pointer; transition: background-color var(--dur-fast) var(--ease-out); min-height: 44px; }
+.hr-queue-row:hover { background: var(--sunk); }
+.hr-queue-row[data-current] { background: var(--accent-tint); }
+.hr-queue-row .hr-thumb[data-selected] { margin: 2px; }
+.hr-queue-row__text { display: flex; flex-direction: column; gap: 4px; min-width: 0; flex: 1; }
+.hr-queue-row__title { font: 500 13.5px/18px var(--font-ui); color: var(--ink); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hr-queue-row[data-current] .hr-queue-row__title { font-weight: 600; }
+.hr-queue-row__meta { display: flex; align-items: center; gap: 6px; font: 400 12px/16px var(--font-ui); color: var(--ink-2); white-space: nowrap; min-width: 0; }
+.hr-queue-row__meta .hr-score { height: 20px; padding: 0 5px; gap: 3px; font-size: 11px; }
+.hr-queue-row__decision { display: inline-flex; align-items: center; gap: 3px; flex: none; height: 20px; padding: 0 6px 0 4px; border-radius: var(--r-chip);
+  font: 600 12px/1 var(--font-ui); background: var(--sunk); color: var(--ink-2); }
+.hr-queue-row__decision[data-decision="kept"] { background: var(--ink); color: var(--on-ink); }
+.hr-queue-row__decision > svg { width: 13px; height: 13px; }
+.hr-queue-row[data-decision="skipped"] .hr-queue-row__title { color: var(--ink-2); }
+.hr-queue:focus-visible { outline: none; box-shadow: none; }
+.hr-queue-row__meta { overflow: hidden; }
+.hr-queue-row__meta > span:last-child { overflow: hidden; text-overflow: ellipsis; }
+/* micro-interaction: the Kept or Skipped badge pops in when a decision lands */
+.hr-queue-row__decision { animation: hr-pop var(--dur-fast) var(--ease-out); }

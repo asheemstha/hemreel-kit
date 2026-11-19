@@ -1,0 +1,20 @@
+.hr-accordion { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.hr-accordion__item { padding: 4px; border-radius: var(--r-card); background: var(--card-bg); box-shadow: var(--card-shadow); min-width: 0; }
+.hr-accordion__header { margin: 0; font: inherit; }
+/* 44 px row inside 4 px of card padding: a 52 px header */
+.hr-accordion__trigger { display: flex; align-items: center; gap: 12px; width: 100%; min-height: var(--h-lg); padding: 6px 12px; border: 0; border-radius: var(--r-control-lg);
+  background: transparent; color: var(--ink); text-align: left; transition: background-color var(--dur-fast) var(--ease-out); }
+.hr-accordion__trigger:hover:not([data-disabled]) { background: var(--sunk); }
+.hr-accordion__trigger[data-disabled] { opacity: .45; cursor: default; }
+.hr-accordion__icon { display: inline-flex; flex: none; color: var(--ink-2); }
+.hr-accordion__icon > svg { width: 18px; height: 18px; }
+.hr-accordion__title { flex: none; max-width: 100%; font: 600 15px/20px var(--font-ui); }
+.hr-accordion__summary { flex: 1; min-width: 0; text-align: right; font: 400 13px/18px var(--font-ui); color: var(--ink-3);
+  transition: opacity var(--dur-fast) var(--ease-out), visibility var(--dur-fast) var(--ease-out); }
+/* the summary stands in for the closed panel, so it leaves when the panel opens */
+.hr-accordion__trigger[data-panel-open] .hr-accordion__summary { opacity: 0; visibility: hidden; }
+.hr-accordion__chevron { flex: none; width: 16px; height: 16px; margin-left: auto; color: var(--ink-2); transition: transform var(--dur-base) var(--ease-in-out); }
+.hr-accordion__trigger[data-panel-open] .hr-accordion__chevron { transform: rotate(180deg); }
+.hr-accordion__panel { height: var(--accordion-panel-height); overflow: hidden; transition: height var(--dur-base) var(--ease-in-out); }
+.hr-accordion__panel[data-starting-style], .hr-accordion__panel[data-ending-style] { height: 0; }
+.hr-accordion__body { padding: 6px 12px 14px; font: var(--text-body); color: var(--ink-2); }

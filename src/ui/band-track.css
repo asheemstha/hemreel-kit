@@ -1,0 +1,13 @@
+.hr-bandtrack { display: flex; flex-direction: column; gap: 6px; }
+.hr-bandtrack__bar { position: relative; display: flex; gap: 3px; height: 22px; align-items: center; }
+.hr-bandtrack__seg { height: 6px; border-radius: var(--r-full); }
+.hr-bandtrack__seg[data-band="weak"] { flex: 0 0 39%; background: var(--line); }
+.hr-bandtrack__seg[data-band="maybe"] { flex: 0 0 25%; background: var(--edge); }
+.hr-bandtrack__seg[data-band="strong"] { flex: 1; background: var(--ink); }
+.hr-bandtrack__marker { position: absolute; top: 0; width: 4px; height: 22px; margin-left: -2px; border-radius: var(--r-full); background: var(--ink); box-shadow: var(--halo-marker); }
+.hr-bandtrack__labels { display: flex; gap: 3px; font: 500 11.5px/14px var(--font-ui); color: var(--ink-3); }
+.hr-bandtrack__labels [data-band="weak"] { flex: 0 0 39%; }
+.hr-bandtrack__labels [data-band="maybe"] { flex: 0 0 25%; }
+.hr-bandtrack__labels [data-band="strong"] { flex: 1; }
+.hr-bandtrack__labels [data-on] { color: var(--ink); font-weight: 600; }
+.hr-bandtrack__marker { transition: left var(--dur-base) var(--ease-in-out); }

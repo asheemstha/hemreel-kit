@@ -1,0 +1,5 @@
+.hr-settings-row { display: flex; align-items: center; gap: 16px; min-height: 60px; padding: 10px 16px; }
+.hr-settings-row__text { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+.hr-settings-row__title { font: 500 14px/20px var(--font-ui); color: var(--ink); }
+.hr-settings-row__note { font: 400 12.5px/18px var(--font-ui); color: var(--ink-3); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hr-settings-row__action { display: flex; align-items: center; gap: 8px; flex: none; }

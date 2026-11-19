@@ -1,0 +1,21 @@
+.hr-chip { display: inline-flex; align-items: center; gap: 4px; height: 22px; padding: 0 8px; border-radius: var(--r-chip); border: 1px solid transparent;
+  font: 600 12px/1 var(--font-ui); white-space: nowrap; background: var(--sunk); color: var(--ink-2); }
+.hr-chip[data-icon] { padding-left: 6px; }
+.hr-chip__icon { display: inline-flex; }
+.hr-chip__icon > svg { width: 13px; height: 13px; }
+.hr-chip[data-tone="ink"] { background: var(--ink); color: var(--on-ink); }
+.hr-chip[data-tone="ok"] { background: var(--ok-tint); color: var(--ok); }
+.hr-chip[data-tone="due"] { background: var(--due-tint); color: var(--due); }
+.hr-chip[data-tone="fail"] { background: var(--fail-tint); color: var(--fail); }
+.hr-chip[data-tone="accent"] { background: var(--accent-tint); color: var(--ink); }
+/* removable: a round button after the text. The chip grows to 24 px so the target is not cramped */
+.hr-chip[data-removable] { height: 24px; padding-right: 3px; gap: 3px; }
+.hr-chip__remove { position: relative; display: inline-flex; align-items: center; justify-content: center; flex: none; width: 18px; height: 18px; padding: 0; border: 0; border-radius: var(--r-full);
+  background: transparent; color: inherit; opacity: .7; transition: background-color var(--dur-fast) var(--ease-out), opacity var(--dur-fast) var(--ease-out); }
+.hr-chip__remove::after { content: ""; position: absolute; inset: -3px; }
+.hr-chip__remove:hover { opacity: 1; background: var(--control-off); }
+.hr-chip[data-tone="ink"] .hr-chip__remove:hover { background: var(--on-ink-wash); }
+.hr-chip__remove > svg { width: 12px; height: 12px; }
+.hr-chip__remove:focus-visible { outline-offset: 0; opacity: 1; }
+/* layout: hugs its content inside any flex or grid parent; never wider than the parent */
+.hr-chip { width: fit-content; max-width: 100%; }

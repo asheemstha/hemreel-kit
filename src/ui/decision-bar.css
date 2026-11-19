@@ -1,0 +1,8 @@
+.hr-decision { display: flex; flex-direction: column; gap: 10px; }
+.hr-decision__buttons { display: flex; gap: 10px; }
+.hr-decision__skip { flex: 1; }
+.hr-decision__keep { flex: 1.5; }
+.hr-decision__fail { display: flex; align-items: center; gap: 6px; font: 500 13px/18px var(--font-ui); color: var(--fail); }
+.hr-decision__fail > svg { width: 16px; height: 16px; flex: none; }
+.hr-decision__notes { display: flex; align-items: center; justify-content: space-between; gap: 12px; font: 400 12.5px/16px var(--font-ui); color: var(--ink-3); }
+.hr-decision__undo { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }

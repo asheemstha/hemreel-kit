@@ -1,0 +1,26 @@
+/* layout: the control hugs its content inside any flex or grid parent; never wider than the parent. `block` fills. */
+.hr-numfield { display: flex; width: fit-content; max-width: 100%; min-width: 0; }
+.hr-numfield[data-block] { width: 100%; }
+.hr-numfield__group { display: flex; align-items: center; gap: 10px; width: 100%; min-width: 132px; height: 40px; padding: 0 6px 0 12px; border-radius: var(--r-field);
+  background: var(--field-bg); cursor: text; transition: background-color var(--dur-fast) var(--ease-out); }
+.hr-numfield[data-size="44"] .hr-numfield__group { height: var(--h-lg); }
+.hr-numfield__group:hover:not([data-disabled]) { background: var(--btn2-hover); }
+.hr-numfield__group[data-disabled] { opacity: .45; cursor: default; }
+.hr-field[data-invalid] .hr-numfield__group { background: var(--fail-tint); }
+/* the number and its unit sit together at the left; the input is as wide as its text */
+.hr-numfield__value { display: flex; align-items: baseline; gap: 4px; flex: 1; min-width: 0; }
+.hr-numfield__input { width: 4ch; min-width: 1ch; max-width: 100%; padding: 0; border: 0; background: transparent; color: var(--ink);
+  font: 400 14px/20px var(--font-ui); font-variant-numeric: tabular-nums; }
+@supports (field-sizing: content) { .hr-numfield__input { width: auto; field-sizing: content; } }
+/* the ring belongs to the whole field, not the bare number inside it */
+.hr-numfield__input:focus-visible { outline: none; box-shadow: none; }
+.hr-numfield__group:has(.hr-numfield__input:focus-visible) { outline: var(--focus-outline); outline-offset: 1px; box-shadow: var(--focus-halo); }
+.hr-numfield__unit { flex: none; font: 400 14px/20px var(--font-ui); color: var(--ink-3); }
+.hr-numfield__steps { display: inline-flex; flex: none; gap: 2px; }
+.hr-numfield__btn { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; padding: 0; border: 0; border-radius: var(--r-chip);
+  background: transparent; color: var(--ink-2); touch-action: none; user-select: none;
+  transition: background-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out), transform var(--dur-press) var(--ease-out); }
+.hr-numfield__btn:hover:not(:disabled) { background: var(--surface); color: var(--ink); }
+.hr-numfield__btn:active:not(:disabled) { transform: scale(.92); }
+.hr-numfield__btn:disabled { color: var(--edge); }
+.hr-numfield__btn > svg { width: 15px; height: 15px; }

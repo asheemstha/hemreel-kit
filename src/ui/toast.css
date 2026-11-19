@@ -1,0 +1,29 @@
+.hr-toast { position: fixed; left: 50%; bottom: 28px; transform: translateX(-50%); z-index: var(--z-toast); display: flex; align-items: center; gap: 14px;
+  min-height: 48px; padding: 8px 8px 8px 16px; border-radius: var(--r-card); background: var(--ink); color: var(--on-ink); box-shadow: var(--shadow-md);
+  font: 500 14px/1 var(--font-ui); animation: hr-toast-in var(--dur-base) var(--ease-out); }
+.hr-toast__action { display: inline-flex; align-items: center; gap: 8px; height: 32px; padding: 0 8px 0 12px; border-radius: var(--r-control);
+  border: 0; background: var(--on-ink-wash); color: var(--on-ink); font: 600 14px/1 var(--font-ui); }
+.hr-toast__action:hover { background: var(--on-ink-edge); color: var(--ink); }
+.hr-toast :focus-visible { outline: 2px solid var(--on-ink); box-shadow: var(--focus-halo); }
+@keyframes hr-toast-in { from { opacity: 0; transform: translate(-50%, 8px); } to { opacity: 1; transform: translate(-50%, 0); } }
+.hr-toast[data-inline] { position: relative; left: auto; bottom: auto; transform: none; animation: none; display: inline-flex; z-index: auto; }
+.hr-toast:not(:has(.hr-toast__action, .hr-toast__close)) { padding-right: 16px; }
+/* a long message wraps instead of squeezing the buttons; the buttons and the meter never shrink */
+.hr-toast > span:not([class]) { line-height: 18px; }
+.hr-toast__action, .hr-toast__close, .hr-toast__progress { flex: none; white-space: nowrap; }
+/* error: an icon and a dismiss button. It stays until dismissed */
+.hr-toast__icon { flex: none; width: 18px; height: 18px; margin-left: -2px; color: var(--on-ink-fail); }
+.hr-toast[data-tone="error"] { gap: 10px; }
+.hr-toast__close { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 32px; height: 32px; padding: 0; border: 0; border-radius: var(--r-full);
+  background: transparent; color: var(--on-ink-2); transition: background-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out); }
+.hr-toast__close:hover { background: var(--on-ink-wash); color: var(--on-ink); }
+.hr-toast__close > svg { width: 16px; height: 16px; }
+.hr-toast__action + .hr-toast__close { margin-left: -8px; }
+/* progress: a short meter and the percent */
+.hr-toast__progress { display: inline-flex; align-items: center; gap: 10px; }
+.hr-toast__progress .hr-meter { width: 72px; }
+.hr-toast__pct { min-width: 34px; color: var(--on-ink-2); font: 500 13px/1 var(--font-ui); text-align: right; }
+/* a toast that arrives while the bulk action bar is up sits above it */
+body:has(.hr-bulk:not([data-inline])) .hr-toast:not([data-inline]) { bottom: 92px; }
+/* layout: hugs its content inside any flex or grid parent; never wider than the parent */
+.hr-toast { width: fit-content; max-width: 100%; }

@@ -1,0 +1,7 @@
+/* Hugs its text. 18 px by default; 16 in dense rows, 20 next to a page title. */
+.hr-live { display: inline-flex; align-items: center; gap: 4px; width: fit-content; height: 18px; padding: 0 6px 0 5px; border-radius: var(--r-key);
+  background: var(--live); color: var(--on-ink); font: 700 9.5px/1 var(--font-ui); letter-spacing: .06em; white-space: nowrap; flex: none; }
+.hr-live[data-size="16"] { height: 16px; padding: 0 5px 0 4px; font-size: 9px; gap: 3px; }
+.hr-live[data-size="20"] { height: 20px; padding: 0 7px 0 6px; font-size: 10.5px; gap: 5px; }
+.hr-live__dot { width: 5px; height: 5px; border-radius: var(--r-full); background: var(--on-ink); animation: hr-live var(--dur-live) ease-out infinite; }
+.hr-live[data-size="16"] .hr-live__dot { width: 4px; height: 4px; }

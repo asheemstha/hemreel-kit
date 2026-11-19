@@ -1,0 +1,24 @@
+/* a light panel, not a dark terminal: the app is light and has no monospace font */
+.hr-log { position: relative; display: flex; flex-direction: column; gap: 8px; width: 100%; min-width: 0; padding: 12px; border-radius: var(--r-card); background: var(--sunk); }
+.hr-log__head { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 10px; padding: 0 2px 0 6px; }
+.hr-log__title { font: 600 14px/20px var(--font-ui); color: var(--ink); }
+.hr-log__count { font: 400 12.5px/17px var(--font-ui); color: var(--ink-3); }
+.hr-log__actions { display: inline-flex; align-items: center; gap: 6px; margin-left: auto; }
+/* on the grey panel a grey button disappears, so actions are white pills (the same answer as the banner) */
+.hr-log .hr-btn[data-kind="secondary"] { background: var(--surface); color: var(--ink); }
+.hr-log .hr-btn[data-kind="secondary"]:hover:not(:disabled) { background: var(--bg); }
+.hr-log__scroll { overflow-y: auto; padding: 4px 6px; border-radius: var(--r-control); overscroll-behavior: contain; }
+.hr-log__scroll:focus-visible { outline-offset: 0; }
+.hr-log__line { display: grid; grid-template-columns: max-content minmax(0, 1fr); column-gap: 12px; padding: 2px 6px; margin: 0 -6px; border-radius: var(--r-sm);
+  font: 400 12.5px/18px var(--font-ui); color: var(--ink-2); }
+.hr-log__time { color: var(--ink-3); white-space: nowrap; }
+.hr-log__text { min-width: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+/* colour never means status on its own: warnings and errors carry the word */
+.hr-log__level { margin-right: 6px; font-weight: 600; }
+.hr-log__line[data-level="warn"] .hr-log__level { color: var(--due); }
+.hr-log__line[data-level="error"] { background: var(--fail-tint); color: var(--ink); }
+.hr-log__line[data-level="error"] .hr-log__time { color: var(--ink-2); }
+.hr-log__line[data-level="error"] .hr-log__level { color: var(--fail); }
+.hr-log__empty { padding: 8px 0; font: 400 13px/18px var(--font-ui); color: var(--ink-3); }
+.hr-log__jump { position: absolute; left: 50%; bottom: 16px; transform: translateX(-50%); display: inline-flex; border-radius: var(--r-full); box-shadow: var(--shadow-md);
+  animation: hr-fade-in var(--dur-fast) var(--ease-out); }

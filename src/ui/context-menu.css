@@ -1,0 +1,2 @@
+/* The target wrapper adds no box: its child lays out as if the wrapper were not there. The popup uses the shared hr-popup surface (select.css). */
+.hr-ctx { display: contents; }

@@ -1,0 +1,8 @@
+.hr-due { display: inline-flex; align-items: center; gap: 6px; height: var(--h-sm); padding: 0 10px; border-radius: var(--r-control);
+  background: var(--due-tint); color: var(--due); border: 1px solid transparent; font: 600 13px/1 var(--font-ui); white-space: nowrap; text-decoration: none;
+  transition: border-color var(--dur-fast) var(--ease-out); }
+.hr-due:hover { background: var(--due-tint-hover); }
+.hr-due > svg { width: 15px; height: 15px; flex: none; }
+.hr-due__time { font: 600 13px/1 var(--font-ui); font-variant-numeric: tabular-nums; }
+/* layout: hugs its content inside any flex or grid parent; never wider than the parent */
+.hr-due { width: fit-content; max-width: 100%; }

@@ -1,0 +1,18 @@
+.hr-tabs { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+/* layout: the row hugs its tabs and wraps; never wider than the parent */
+.hr-tabs__list { position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 4px; width: fit-content; max-width: 100%; isolation: isolate; }
+/* the selection: one soft pill under the tabs that slides and resizes to the active one. No underline */
+.hr-tabs__thumb { position: absolute; top: 0; left: 0; z-index: 0; border-radius: var(--r-full); background: var(--nav-selected); pointer-events: none; }
+.hr-tabs__thumb[data-ready] { transition: transform var(--dur-base) var(--ease-in-out), width var(--dur-base) var(--ease-in-out); }
+.hr-tabs__thumb[data-hidden] { opacity: 0; }
+.hr-tabs__tab { position: relative; z-index: 1; display: inline-flex; align-items: center; gap: 8px; height: var(--h-md); padding: 0 14px; border: 0; border-radius: var(--r-full);
+  background: transparent; color: var(--ink-2); font: 500 14px/1 var(--font-ui); white-space: nowrap;
+  transition: color var(--dur-fast) var(--ease-out), background-color var(--dur-fast) var(--ease-out); }
+.hr-tabs__tab:hover:not([data-active]):not([data-disabled]) { background: var(--sunk); color: var(--ink); }
+/* the active label keeps its weight so the pill never chases a width change */
+.hr-tabs__tab[data-active] { color: var(--ink); }
+.hr-tabs__tab[data-disabled] { opacity: .45; cursor: default; }
+.hr-tabs__count { font: 500 12.5px/1 var(--font-ui); color: var(--ink-3); }
+.hr-tabs__tab[data-active] .hr-tabs__count { color: var(--ink-2); }
+.hr-tabs__panel { min-width: 0; border-radius: var(--r-chip); }
+.hr-tabs__panel[hidden] { display: none; }

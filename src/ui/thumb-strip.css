@@ -1,0 +1,3 @@
+.hr-thumbstrip { display: flex; align-items: flex-start; gap: 7px; margin: 0; padding: 0; list-style: none; }
+.hr-thumbstrip__item { display: flex; }
+.hr-thumbstrip__divider { width: 1px; align-self: stretch; background: var(--line); margin: 0 2px; }

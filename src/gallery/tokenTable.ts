@@ -1,0 +1,66 @@
+// Uses and ratios copied from the tokens.css comments; the values are read from the live CSS so they cannot drift. Ratios are recomputed and enforced by scripts/check-contrast.mjs.
+export interface TokenRow { name: string; token: string; use: string; ratio?: string; light?: boolean }
+export const TOKEN_TABLE: Array<{ group: string; items: TokenRow[] }> = [
+  { group: 'Surfaces', items: [
+    { name: 'Background', token: '--bg', use: 'app background' },
+    { name: 'Sidebar', token: '--side', use: 'sidebar and icon rail' },
+    { name: 'Surface', token: '--surface', use: 'cards, inputs, top bar' },
+    { name: 'Sunk', token: '--sunk', use: 'neutral chips, timeline lanes, segmented track' },
+    { name: 'Nav selected', token: '--nav-selected', use: 'filled background of the current nav item' },
+    { name: 'Line', token: '--line', use: 'dividers, card outlines. Decorative only' },
+    { name: 'Edge', token: '--edge', use: 'borders of buttons, inputs, toggles', ratio: '3.31:1 on surface, 3.17:1 on bg' },
+  ] },
+  { group: 'Text', items: [
+    { name: 'Ink', token: '--ink', use: '', ratio: '17.01:1 on bg' },
+    { name: 'Ink 2', token: '--ink-2', use: '', ratio: '7.97:1 on bg, 7.64:1 on accent-tint' },
+    { name: 'Ink 3', token: '--ink-3', use: 'Lightest text allowed', ratio: '5.76:1 on bg, 5.33:1 on sunk, 4.83:1 on nav-selected' },
+  ] },
+  { group: 'Accent', items: [
+    { name: 'Accent', token: '--accent', use: '', ratio: 'ink on accent 12.24:1' },
+    { name: 'Accent hover', token: '--accent-hover', use: 'Primary hover' },
+    { name: 'Accent active', token: '--accent-active', use: 'Primary pressed' },
+    { name: 'Accent edge', token: '--accent-edge', use: 'border of every accent fill', ratio: '3.82:1 on surface, 3.51:1 on accent-tint' },
+    { name: 'Accent tint', token: '--accent-tint', use: 'selected row, most urgent row' },
+  ] },
+  { group: 'Video stage', items: [
+    { name: 'Stage', token: '--stage', use: 'Video stage panel' },
+    { name: 'Stage 2', token: '--stage-2', use: 'controls on the stage' },
+    { name: 'Stage edge', token: '--stage-edge', use: '', ratio: '4.42:1 on stage, 3.90:1 on stage-2' },
+    { name: 'Stage text', token: '--stage-text', use: '', ratio: '16.82:1 on stage' },
+    { name: 'Stage muted', token: '--stage-muted', use: '', ratio: '7.83:1 on stage' },
+    { name: 'Stage track', token: '--stage-track', use: 'scrubber track' },
+  ] },
+  { group: 'Status', items: [
+    { name: 'Ok', token: '--ok', use: '', ratio: '5.36:1 on surface, 4.73:1 on ok-tint' },
+    { name: 'Ok tint', token: '--ok-tint', use: 'Ok chip fill' },
+    { name: 'Due', token: '--due', use: '', ratio: '5.92:1 on surface, 5.10:1 on due-tint' },
+    { name: 'Due tint', token: '--due-tint', use: 'Due chip and row fill' },
+    { name: 'Due track', token: '--due-track', use: '' },
+    { name: 'Fail', token: '--fail', use: '', ratio: '6.57:1 on surface, 5.59:1 on fail-tint' },
+    { name: 'Fail tint', token: '--fail-tint', use: 'Fail chip and banner fill' },
+    { name: 'Live', token: '--live', use: 'Reserved for on-air only', ratio: 'white on live 5.01:1' },
+  ] },
+  { group: 'Timeline lanes', items: [
+    { name: 'Audio lane', token: '--audio', use: '', ratio: '4.90:1 on sunk' },
+    { name: 'Chat lane', token: '--chat', use: '', ratio: '4.74:1 on sunk' },
+  ] },
+  { group: 'On ink and overlays', items: [
+    { name: 'On ink', token: '--on-ink', use: 'Text on ink' },
+    { name: 'On ink 2', token: '--on-ink-2', use: 'Secondary text on ink' },
+    { name: 'On ink edge', token: '--on-ink-edge', use: '', ratio: '6.56:1 on ink' },
+    { name: 'On ink wash', token: '--on-ink-wash', use: 'hover and keycap fill on ink' },
+    { name: 'On accent wash', token: '--on-accent-wash', use: 'keycap fill on accent' },
+    { name: 'Scrim', token: '--scrim', use: '' },
+    { name: 'Mark fold', token: '--mark-fold', use: 'logo fold on light' },
+    { name: 'Mark fold on ink', token: '--mark-fold-on-ink', use: 'logo fold on dark' },
+  ] },
+  { group: 'Added during the build', items: [
+    { name: 'Stage dim', token: '--stage-dim', use: 'outside the source crop regions' },
+    { name: 'Stage label', token: '--stage-label-bg', use: 'safe zone labels: white mono on black' },
+    { name: 'Zone light', token: '--zone-light', use: 'safe zone hatch' },
+    { name: 'Zone dark', token: '--zone-dark', use: 'Safe zone hatch' },
+    { name: 'Stage fail circle', token: '--stage-fail-bg', use: 'the dark red circle behind the stage error icon' },
+    { name: 'Stage fail icon', token: '--stage-fail-fg', use: 'icon in that circle', ratio: '8.04:1 on stage-fail-bg' },
+    { name: 'Veil', token: '--veil', use: 'timeline outside the in and out points' },
+  ] },
+];

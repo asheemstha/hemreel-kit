@@ -1,0 +1,19 @@
+.hr-banner { display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px; border-radius: var(--r-card); border: 0; background: var(--card-bg); }
+.hr-banner[data-tone="fail"] { background: var(--fail-tint); }
+.hr-banner[data-tone="due"] { background: var(--due-tint); }
+.hr-banner__icon { display: inline-flex; flex: none; color: var(--ink-2); padding-top: 1px; }
+.hr-banner__icon > svg { width: 20px; height: 20px; }
+.hr-banner[data-tone="fail"] .hr-banner__icon { color: var(--fail); }
+.hr-banner[data-tone="due"] .hr-banner__icon { color: var(--due); }
+.hr-banner__text { display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1; }
+.hr-banner__title { font: 600 15px/20px var(--font-ui); color: var(--ink); }
+.hr-banner__body { font: 400 13.5px/20px var(--font-ui); color: var(--ink-2); }
+.hr-banner__detail { font: 500 12px/16px var(--font-ui); color: var(--ink-2); margin-top: 2px; font-variant-numeric: tabular-nums; }
+.hr-banner__actions { display: flex; align-items: center; gap: 8px; flex: none; align-self: center; }
+/* the neutral banner sits on white cards and pages, so it gets a soft fill to read as a banner */
+.hr-banner[data-tone="neutral"] { background: var(--sunk); }
+/* actions inside a banner: a white pill stands out from the tint; grey fills disappear into it */
+.hr-banner .hr-btn[data-kind="secondary"], .hr-banner .hr-btn[data-kind="ghost"] { background: var(--surface); color: var(--ink); }
+.hr-banner .hr-btn[data-kind="secondary"]:hover:not(:disabled), .hr-banner .hr-btn[data-kind="ghost"]:hover:not(:disabled) { background: var(--bg); }
+.hr-banner[data-tone="fail"] .hr-btn[data-kind="secondary"]:hover:not(:disabled), .hr-banner[data-tone="fail"] .hr-btn[data-kind="ghost"]:hover:not(:disabled) { color: var(--fail); }
+.hr-banner[data-tone="due"] .hr-btn[data-kind="secondary"]:hover:not(:disabled), .hr-banner[data-tone="due"] .hr-btn[data-kind="ghost"]:hover:not(:disabled) { color: var(--due); }

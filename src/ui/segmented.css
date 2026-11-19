@@ -1,0 +1,27 @@
+.hr-seg { display: inline-flex; max-width: 100%; }
+.hr-seg__track { position: relative; display: inline-flex; align-items: center; gap: 2px; padding: 2px; border-radius: var(--r-seg); background: var(--sunk); border: 0; isolation: isolate; }
+/* the selection: one pill under the items that slides and resizes to the chosen one */
+.hr-seg__thumb { position: absolute; top: 2px; bottom: 2px; left: 0; z-index: 0; border-radius: var(--r-seg-item); background: var(--seg-selected); pointer-events: none; }
+.hr-seg__thumb[data-ready] { transition: transform var(--dur-base) var(--ease-in-out), width var(--dur-base) var(--ease-in-out); }
+.hr-seg__thumb[data-hidden] { opacity: 0; }
+.hr-seg__item { position: relative; z-index: 1; display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 28px; padding: 0 11px; border: 0; border-radius: var(--r-seg-item);
+  background: transparent; color: var(--ink-2); font: 500 13px/1 var(--font-ui); white-space: nowrap;
+  transition: color var(--dur-base) var(--ease-in-out); }
+.hr-seg__item:hover:not([data-checked]):not([data-active]):not([data-disabled]) { color: var(--ink); }
+/* the chosen label keeps weight 500 so its width never jumps under the sliding pill */
+.hr-seg__item[data-checked], .hr-seg__item[data-active] { color: var(--seg-selected-ink); }
+.hr-seg__item[data-disabled] { opacity: .45; cursor: default; }
+.hr-seg[data-disabled] .hr-seg__thumb, .hr-seg__track[data-disabled] .hr-seg__thumb { opacity: .45; }
+.hr-seg__item:focus-visible { outline-offset: 1px; }
+.hr-seg__count { font-weight: inherit; opacity: .8; }
+
+/* stage variant: for controls that sit on the video stage */
+.hr-seg[data-variant="stage"] .hr-seg__track, .hr-seg__track[data-variant="stage"] { background: var(--stage-2); }
+.hr-seg[data-variant="stage"] .hr-seg__thumb, .hr-seg__track[data-variant="stage"] .hr-seg__thumb { background: var(--stage-text); }
+.hr-seg[data-variant="stage"] .hr-seg__item, .hr-seg__track[data-variant="stage"] .hr-seg__item { color: var(--stage-muted); }
+.hr-seg[data-variant="stage"] .hr-seg__item:hover:not([data-checked]):not([data-active]),
+.hr-seg__track[data-variant="stage"] .hr-seg__item:hover:not([data-checked]) { color: var(--stage-text); }
+.hr-seg[data-variant="stage"] .hr-seg__item[data-checked], .hr-seg[data-variant="stage"] .hr-seg__item[data-active],
+.hr-seg__track[data-variant="stage"] .hr-seg__item[data-checked] { color: var(--stage); }
+/* layout: hugs its content inside any flex or grid parent; never wider than the parent */
+.hr-seg { width: fit-content; max-width: 100%; }

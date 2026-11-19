@@ -1,0 +1,42 @@
+/* ---- vertical: the full list for a progress screen ---- */
+.hr-pipe[data-orientation="vertical"] { width: 100%; min-width: 0; }
+.hr-pipe__list { display: flex; flex-direction: column; gap: 4px; margin: 0; padding: 0; list-style: none; }
+.hr-pipe__step { display: grid; grid-template-columns: 24px minmax(0, 1fr); column-gap: 12px; align-items: start; padding: 8px 10px; border-radius: var(--r-control); }
+/* the running step is the one row with a fill, so the eye lands on it */
+.hr-pipe__step[data-state="running"] { background: var(--sunk); }
+.hr-pipe__marker { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: var(--r-full); color: var(--ink-3); }
+.hr-pipe__marker > svg { width: 14px; height: 14px; }
+.hr-pipe__marker[data-state="done"] { background: var(--ink); color: var(--on-ink); animation: hr-pop var(--dur-fast) var(--ease-out); }
+.hr-pipe__marker[data-state="running"] > svg { width: 20px; height: 20px; }
+.hr-pipe__marker[data-state="failed"] { color: var(--fail); }
+.hr-pipe__marker[data-state="failed"] > svg { width: 20px; height: 20px; }
+.hr-pipe__dot { width: 8px; height: 8px; border-radius: var(--r-full); background: var(--control-off); }
+.hr-pipe__text { display: flex; flex-direction: column; gap: 4px; min-width: 0; padding-top: 2px; }
+.hr-pipe__head { display: flex; align-items: baseline; flex-wrap: wrap; column-gap: 8px; }
+.hr-pipe__label { font: 500 14px/20px var(--font-ui); color: var(--ink); }
+.hr-pipe__step[data-state="running"] .hr-pipe__label { font-weight: 600; }
+.hr-pipe__step[data-state="queued"] .hr-pipe__label, .hr-pipe__step[data-state="skipped"] .hr-pipe__label { color: var(--ink-3); }
+.hr-pipe__word { font: 600 12.5px/18px var(--font-ui); color: var(--ink-3); }
+.hr-pipe__step[data-state="failed"] .hr-pipe__word { color: var(--fail); }
+.hr-pipe__pct { margin-left: auto; font: 500 13px/18px var(--font-ui); color: var(--ink-2); }
+.hr-pipe__detail { font: 400 12.5px/17px var(--font-ui); color: var(--ink-3); }
+.hr-pipe__step[data-state="running"] .hr-pipe__detail, .hr-pipe__step[data-state="failed"] .hr-pipe__detail { color: var(--ink-2); }
+.hr-pipe__step[data-state="running"] .hr-meter { margin: 4px 0 2px; background: var(--control-off); }
+
+/* ---- horizontal: one compact row for a project card ---- */
+/* layout: hugs its content; the text wraps under the markers when it does not fit */
+.hr-pipe[data-orientation="horizontal"] { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 6px 10px; width: fit-content; max-width: 100%; }
+.hr-pipe__track { display: inline-flex; align-items: center; gap: 4px; margin: 0; padding: 0; list-style: none; }
+/* each step is a dot; the running one stretches into a small bar that fills as it works. Gaps join them, not lines */
+.hr-pipe__seg { position: relative; width: 8px; height: 8px; border-radius: var(--r-full); background: var(--control-off); overflow: hidden;
+  transition: width var(--dur-base) var(--ease-in-out), background-color var(--dur-base) var(--ease-in-out); }
+.hr-pipe__seg[data-state="done"] { background: var(--ink); }
+.hr-pipe__seg[data-state="running"] { width: 32px; }
+.hr-pipe__seg[data-state="failed"] { background: var(--fail); }
+.hr-pipe__seg[data-state="skipped"] { opacity: .5; }
+.hr-pipe__seg-fill { position: absolute; inset: 0 auto 0 0; border-radius: inherit; background: var(--ink); transition: width var(--dur-base) var(--ease-in-out); }
+.hr-pipe__now { display: inline-flex; align-items: center; gap: 6px; font: 500 13px/18px var(--font-ui); color: var(--ink); }
+.hr-pipe__now > svg { width: 14px; height: 14px; flex: none; }
+.hr-pipe__now[data-state="queued"] { color: var(--ink-3); }
+.hr-pipe__now[data-state="failed"] { color: var(--fail); font-weight: 600; }
+.hr-pipe__now .hr-pipe__pct { margin-left: 0; }

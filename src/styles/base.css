@@ -1,0 +1,35 @@
+*, *::before, *::after { box-sizing: border-box; }
+html { font: var(--text-body); color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+body { margin: 0; }
+:where(button, input, textarea, select) { font: inherit; color: inherit; }
+:where(button) { cursor: pointer; }
+:where(button:disabled) { cursor: default; }
+:where(a) { color: inherit; }
+:where(h1, h2, h3, p, dl, dd, ol, ul) { margin: 0; }
+
+/* one focus ring everywhere; a white one on the video stage so no brand colour touches footage */
+:focus-visible { outline: var(--focus-outline); outline-offset: 2px; box-shadow: var(--focus-halo); }
+[data-surface="stage"] :focus-visible { outline: var(--focus-outline-stage); box-shadow: var(--focus-halo-stage); }
+
+/* one icon weight everywhere: 1.4 px on screen whether the icon is drawn at 13 px or 26 px */
+svg.lucide { stroke-width: var(--icon-stroke); }
+svg.lucide * { vector-effect: non-scaling-stroke; }
+
+.hr-tnum { font-variant-numeric: tabular-nums; }
+.hr-mono { font-variant-numeric: tabular-nums; } /* kept as an alias: there is no monospace font */
+.hr-sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+@keyframes hr-live { 0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, .75); } 70% { box-shadow: 0 0 0 5px rgba(255, 255, 255, 0); } 100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); } }
+@keyframes hr-spin { to { transform: rotate(360deg); } }
+/* micro-interactions: something appears (a check, a badge, a dot) */
+@keyframes hr-pop { from { opacity: 0; transform: scale(.6); } to { opacity: 1; transform: scale(1); } }
+/* the next clip arrives after Keep or Skip */
+@keyframes hr-clip-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@keyframes hr-fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes hr-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .55; } }
+
+/* the gallery's "reduce motion" toggle sets data-motion="reduce" on <html> so the effect can be seen without changing OS settings */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+html[data-motion="reduce"] *, html[data-motion="reduce"] *::before, html[data-motion="reduce"] *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }

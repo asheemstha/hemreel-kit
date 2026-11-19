@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "es2023",
+    "lib": [
+      "ES2023",
+      "DOM"
+    ],
+    "module": "esnext",
+    "types": [
+      "node"
+    ],
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "verbatimModuleSyntax": true,
+    "noEmit": true,
+    "strict": true
+  },
+  "include": [
+    "vite.config.ts",
+    "playwright.config.ts",
+    "tests/**/*.spec.ts",
+    "tests/routes.ts"
+  ]
+}

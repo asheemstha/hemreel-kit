@@ -1,0 +1,3 @@
+.hr-transport { display: flex; align-items: center; gap: 12px; width: 100%; min-width: 0; color: var(--stage-text); }
+.hr-transport__time { flex: none; font: var(--text-timecode); color: var(--stage-text); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.hr-transport__dur { color: var(--stage-muted); }

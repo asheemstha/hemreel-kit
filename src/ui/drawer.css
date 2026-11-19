@@ -1,0 +1,21 @@
+.hr-drawer__scrim { position: fixed; inset: 0; z-index: var(--z-overlay); background: var(--scrim); transition: opacity var(--dur-base) var(--ease-out); }
+.hr-drawer__scrim[data-starting-style], .hr-drawer__scrim[data-ending-style] { opacity: 0; }
+.hr-drawer { --w: 480px; --off: calc(100% + 12px); position: fixed; z-index: calc(var(--z-overlay) + 1); top: 12px; bottom: 12px; right: 12px;
+  display: flex; flex-direction: column; width: min(var(--w), calc(100vw - 24px));
+  border: 0; border-radius: var(--r-stage); background: var(--surface); box-shadow: var(--shadow-lg); color: var(--ink); outline: none;
+  transition: transform var(--dur-base) var(--ease-out), opacity var(--dur-base) var(--ease-out); }
+.hr-drawer[data-w="360"] { --w: 360px; }
+.hr-drawer[data-w="640"] { --w: 640px; }
+.hr-drawer[data-side="left"] { right: auto; left: 12px; --off: calc(-100% - 12px); }
+/* a drawer that leaves the page usable sits under dialogs and menus */
+.hr-drawer[data-nonmodal] { z-index: var(--z-drawer); }
+.hr-drawer[data-starting-style], .hr-drawer[data-ending-style] { transform: translateX(var(--off)); opacity: 0; }
+.hr-drawer__head { flex: none; display: flex; flex-direction: column; gap: 4px; padding: 20px 56px 0 24px; }
+.hr-drawer__title { margin: 0; font: var(--text-heading); letter-spacing: -0.01em; color: var(--ink); }
+.hr-drawer__desc { margin: 0; font: 400 13.5px/20px var(--font-ui); color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.hr-drawer__body { flex: 1 1 auto; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 16px; padding: 16px 24px 24px; font: var(--text-body); color: var(--ink); }
+.hr-drawer[data-footer] .hr-drawer__body { padding-bottom: 8px; }
+.hr-drawer__body:focus-visible { outline-offset: -2px; box-shadow: none; }
+.hr-drawer__foot { flex: none; display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 8px; padding: 16px 24px 20px; }
+/* two classes, so it wins over the icon button's own `position` whatever order the stylesheets load in */
+.hr-drawer > .hr-drawer__close { position: absolute; top: 14px; right: 14px; }

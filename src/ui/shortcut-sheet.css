@@ -1,0 +1,22 @@
+.hr-sheet__scrim { position: fixed; inset: 0; z-index: var(--z-overlay); background: var(--scrim); transition: opacity var(--dur-base) var(--ease-out); }
+.hr-sheet__scrim[data-starting-style], .hr-sheet__scrim[data-ending-style] { opacity: 0; }
+.hr-sheet { position: fixed; z-index: calc(var(--z-overlay) + 1); top: 50%; left: 50%; transform: translate(-50%, -50%); width: min(960px, calc(100vw - 48px)); max-height: calc(100vh - 48px);
+  overflow: auto; padding: 22px 28px 24px; border-radius: var(--r-stage); background: var(--surface); box-shadow: var(--shadow-md); color: var(--ink);
+  transition: opacity var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out); }
+.hr-sheet[data-starting-style], .hr-sheet[data-ending-style] { opacity: 0; transform: translate(-50%, calc(-50% + 8px)); }
+.hr-sheet__head { display: grid; grid-template-columns: 1fr auto; column-gap: 16px; row-gap: 4px; margin-bottom: 18px; }
+.hr-sheet__title { font: var(--text-title); letter-spacing: -0.02em; }
+.hr-sheet__desc { grid-column: 1; font: 400 13px/18px var(--font-ui); color: var(--ink-3); }
+.hr-sheet__close { grid-column: 2; grid-row: 1 / span 2; align-self: start; display: inline-flex; align-items: center; gap: 8px; height: var(--h-md); padding: 0 8px 0 10px;
+  border: 0; border-radius: var(--r-full); background: var(--btn2-bg); color: var(--ink); }
+.hr-sheet__close:hover { background: var(--sunk); }
+.hr-sheet__close > svg { width: 16px; height: 16px; }
+.hr-sheet__cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+.hr-sheet__col-title { font: 600 14px/20px var(--font-ui); margin-bottom: 6px; }
+.hr-sheet__list { margin: 0; }
+.hr-sheet__row { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 34px; }
+.hr-sheet__label { font: 400 13.5px/18px var(--font-ui); color: var(--ink-2); display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; min-width: 0; }
+.hr-sheet__proposed { font: 500 11px/14px var(--font-ui); color: var(--ink-3); }
+.hr-sheet__key { margin: 0; flex: none; }
+.hr-sheet__keys { display: inline-flex; align-items: center; gap: 4px; }
+.hr-sheet__to { font: 400 12px/1 var(--font-ui); color: var(--ink-3); }

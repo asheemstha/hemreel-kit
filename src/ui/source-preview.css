@@ -1,0 +1,14 @@
+.hr-source { flex: none; max-width: 100%; }
+.hr-source__frame { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: var(--r-control-lg); background: var(--stage-2); user-select: none; }
+.hr-source__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.hr-source__dim { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.hr-source__dim rect[mask] { fill: var(--stage-dim); }
+.hr-source__region { position: absolute; }
+.hr-source__move { position: absolute; inset: 0; width: 100%; height: 100%; padding: 0; margin: 0; background: transparent; cursor: grab; touch-action: none;
+  border: 1.5px solid var(--on-ink); border-radius: var(--r-sm); color: var(--on-ink); }
+.hr-source__region[data-kind="gameplay"] .hr-source__move { border-style: dashed; }
+.hr-source__region[data-active] .hr-source__move { cursor: grabbing; }
+.hr-source__label { position: absolute; top: 5px; left: 5px; padding: 2px 5px; border-radius: var(--r-sm); background: var(--stage-label-bg); color: var(--on-ink);
+  font: 500 10.5px/14px var(--font-ui); white-space: nowrap; pointer-events: none; font-variant-numeric: tabular-nums; }
+.hr-source__handle { position: absolute; right: -6px; bottom: -6px; width: 12px; height: 12px; border-radius: var(--r-xs); background: var(--on-ink);
+  border: 1.5px solid var(--stage); cursor: nwse-resize; touch-action: none; }

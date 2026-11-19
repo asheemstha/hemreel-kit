@@ -1,0 +1,5 @@
+/* ConfirmDialog reuses the Dialog surface (dialog.css) at a width that fits two short sentences */
+.hr-dialog.hr-confirm { --w: 440px; }
+.hr-confirm .hr-dialog__head { gap: 6px; }
+/* what will be lost: a quiet filled line, so the numbers stand apart from the sentence */
+.hr-confirm__detail { width: fit-content; max-width: 100%; margin: 6px 0 0; padding: 6px 10px; border-radius: var(--r-chip); background: var(--sunk); color: var(--ink-2); font: 500 13px/18px var(--font-ui); }

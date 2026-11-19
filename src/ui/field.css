@@ -1,0 +1,32 @@
+.hr-field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.hr-field__label { font: 600 13px/18px var(--font-ui); color: var(--ink); }
+.hr-field__control { position: relative; display: flex; align-items: center; height: 40px; }
+.hr-field__control[data-size="44"] { height: var(--h-lg); }
+.hr-field__control[data-size="48"] { height: var(--space-12); }
+.hr-field__input { width: 100%; height: 100%; padding: 0 12px; border: 1px solid var(--field-edge); border-radius: var(--r-field);
+  background: var(--field-bg); box-shadow: var(--field-shadow); color: var(--ink); font: 400 14px/20px var(--font-ui);
+  transition: border-color var(--dur-fast) var(--ease-out), background-color var(--dur-fast) var(--ease-out); }
+.hr-field__input::placeholder { color: var(--ink-3); opacity: 1; }
+.hr-field__input:hover:not(:disabled):not(:read-only) { background: var(--btn2-hover); }
+/* the field's own box-shadow would otherwise hide the global focus halo */
+.hr-field__input:focus-visible { outline-offset: 1px; box-shadow: var(--focus-halo); }
+/* gallery only: show the focused look without real focus */
+.hr-field__input[data-focus] { outline: var(--focus-outline); outline-offset: 1px; box-shadow: var(--focus-halo); }
+.hr-field__control[data-lead] .hr-field__input { padding-left: 36px; }
+.hr-field__control[data-trail] .hr-field__input { padding-right: 40px; }
+.hr-field__lead { position: absolute; left: 11px; top: 50%; transform: translateY(-50%); display: inline-flex; color: var(--ink-3); pointer-events: none; }
+.hr-field__lead > svg { width: 16px; height: 16px; }
+.hr-field__currency { font: 500 14px/1 var(--font-ui); color: var(--ink-2); width: 16px; text-align: center; }
+.hr-field__trail { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); display: inline-flex; pointer-events: none; }
+/* interactive controls inside the field, at the right: clear, reveal, a unit. The input is padded by their measured width */
+.hr-field__actions { position: absolute; right: 4px; top: 50%; transform: translateY(-50%); display: inline-flex; align-items: center; gap: 2px; }
+.hr-field__control[data-size="44"] .hr-field__actions, .hr-field__control[data-size="48"] .hr-field__actions { right: 6px; }
+/* label row with a quiet value at the right (FieldFrame `aside`) */
+.hr-field__head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; min-width: 0; }
+.hr-field__aside { flex: none; font: 500 13px/18px var(--font-ui); color: var(--ink-2); }
+.hr-field__input:disabled { opacity: .45; cursor: default; }
+.hr-field__input:read-only:not(:disabled) { background: var(--bg); color: var(--ink-2); }
+.hr-field[data-invalid] .hr-field__input { background: var(--fail-tint); }
+.hr-field__msg { display: flex; align-items: flex-start; gap: 6px; font: 400 12.5px/17px var(--font-ui); color: var(--ink-3); }
+.hr-field__msg[data-error] { color: var(--fail); font-weight: 500; }
+.hr-field__msg > svg { flex: none; width: 14px; height: 14px; margin-top: 1.5px; }

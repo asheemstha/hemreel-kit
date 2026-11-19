@@ -1,0 +1,5 @@
+.hr-player { position: relative; flex: none; overflow: hidden; width: 387px; height: 688px; border-radius: var(--r-control-lg); background: var(--stage-2); color: var(--stage-text); }
+.hr-player[data-size="moments"] { width: 191px; height: 340px; }
+.hr-player[data-size="small"] { width: 174px; height: 310px; }
+.hr-player__media { display: block; width: 100%; height: 100%; object-fit: cover; animation: hr-fade-in var(--dur-base) var(--ease-out); }
+.hr-player__placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 24px; text-align: center; }

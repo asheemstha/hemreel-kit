@@ -1,0 +1,20 @@
+/* layout: fixed at the bottom centre, one layer under the toast; hugs its content */
+.hr-bulk { position: fixed; left: 50%; bottom: 28px; transform: translateX(-50%); z-index: calc(var(--z-toast) - 1); display: flex; align-items: center; gap: 8px;
+  width: fit-content; max-width: calc(100% - 32px); min-height: 52px; padding: 8px 8px 8px 20px; border-radius: var(--r-full); background: var(--ink); color: var(--on-ink);
+  box-shadow: var(--shadow-md); animation: hr-bulk-in var(--dur-base) var(--ease-out); }
+@keyframes hr-bulk-in { from { opacity: 0; transform: translate(-50%, 12px); } to { opacity: 1; transform: translate(-50%, 0); } }
+.hr-bulk[data-inline] { position: relative; left: auto; bottom: auto; transform: none; z-index: auto; max-width: 100%; animation: hr-clip-in var(--dur-base) var(--ease-out); }
+.hr-bulk__count { flex: none; margin-right: 8px; font: 600 14px/20px var(--font-ui); white-space: nowrap; }
+.hr-bulk__actions { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; min-width: 0; }
+.hr-bulk__action { display: inline-flex; align-items: center; gap: 6px; height: var(--h-md); padding: 0 14px; border: 0; border-radius: var(--r-full); background: var(--on-ink-wash); color: var(--on-ink);
+  font: 600 13.5px/1 var(--font-ui); white-space: nowrap; transition: background-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out), transform var(--dur-press) var(--ease-out); }
+.hr-bulk__action:hover:not(:disabled) { background: var(--on-ink-edge); color: var(--ink); }
+.hr-bulk__action:active:not(:disabled) { transform: scale(.97); }
+.hr-bulk__action:disabled { opacity: .45; }
+.hr-bulk__icon { display: inline-flex; flex: none; }
+.hr-bulk__icon > svg { width: 16px; height: 16px; }
+.hr-bulk__clear { display: inline-flex; align-items: center; justify-content: center; flex: none; width: var(--h-md); height: var(--h-md); padding: 0; border: 0; border-radius: var(--r-full);
+  background: transparent; color: var(--on-ink-2); transition: background-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out); }
+.hr-bulk__clear:hover { background: var(--on-ink-wash); color: var(--on-ink); }
+.hr-bulk__clear > svg { width: 18px; height: 18px; }
+.hr-bulk :focus-visible { outline: 2px solid var(--on-ink); box-shadow: var(--focus-halo); }

@@ -1,0 +1,22 @@
+/* layout: the field hugs its trigger; never wider than the parent */
+.hr-color { width: fit-content; max-width: 100%; }
+.hr-color__trigger { display: inline-flex; align-items: center; gap: 8px; width: fit-content; max-width: 100%; height: 40px; padding: 0 10px 0 8px; border: 0; border-radius: var(--r-field);
+  background: var(--field-bg); color: var(--ink); font: 500 14px/20px var(--font-ui);
+  transition: background-color var(--dur-fast) var(--ease-out), transform var(--dur-press) var(--ease-out); }
+.hr-color__trigger:hover:not(:disabled), .hr-color__trigger[data-popup-open] { background: var(--btn2-hover); }
+.hr-color__trigger:active:not(:disabled) { transform: scale(.97); }
+.hr-color__trigger:disabled { opacity: .45; }
+/* the colour itself is content, passed in as --swatch. The inset hairline keeps white visible on a white panel */
+.hr-color__dot { flex: none; width: 22px; height: 22px; border-radius: var(--r-full); background: var(--swatch); box-shadow: inset 0 0 0 1px var(--control-off); }
+.hr-color__hex { letter-spacing: .01em; }
+.hr-color__chevron { flex: none; width: 14px; height: 14px; color: var(--ink-3); transition: transform var(--dur-fast) var(--ease-out); }
+.hr-color__trigger[data-popup-open] .hr-color__chevron { transform: rotate(180deg); }
+
+.hr-color__grid { display: grid; grid-template-columns: repeat(6, 28px); gap: 8px; margin-bottom: 12px; }
+.hr-color__swatch { width: 28px; height: 28px; padding: 0; border: 0; border-radius: var(--r-full); background: var(--swatch); box-shadow: inset 0 0 0 1px var(--control-off);
+  transition: transform var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out); }
+.hr-color__swatch:hover { transform: scale(1.1); }
+.hr-color__swatch:active { transform: scale(.94); }
+.hr-color__swatch[aria-checked="true"] { box-shadow: inset 0 0 0 1px var(--control-off), var(--ring-selected); }
+.hr-color__swatch:focus-visible { outline-offset: 3px; }
+.hr-color__hexfield .hr-field__input { text-transform: uppercase; }

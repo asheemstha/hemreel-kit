@@ -1,0 +1,7 @@
+.hr-card { background: var(--card-bg); border: 0; border-radius: var(--r-card); box-shadow: var(--card-shadow); min-width: 0; }
+.hr-card[data-tint="due"] { background: var(--due-tint); }
+.hr-card[data-tint="accent"] { background: var(--accent-tint);  }
+.hr-card[data-padded] > .hr-card__body { padding: 16px; }
+.hr-card__header { padding: 16px 16px 4px; }
+.hr-card[data-divided] > .hr-card__body { padding: 0; }
+.hr-card[data-divided] > .hr-card__body { padding: 4px 0; }

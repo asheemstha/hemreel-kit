@@ -1,0 +1,7 @@
+.hr-lane-bars { display: block; width: 100%; }
+.hr-lane-bars rect { transition: fill var(--dur-fast) var(--ease-out), opacity var(--dur-fast) var(--ease-out); }
+.hr-lane-bars[data-tone="audio"] rect { fill: var(--audio); }
+.hr-lane-bars[data-tone="chat"] rect { fill: var(--chat); }
+/* outside the selected range the bars fade back; the played part of the range is drawn in ink */
+.hr-lane-bars rect[data-part="out"] { opacity: .35; }
+.hr-lane-bars[data-tone="audio"] rect[data-part="played"] { fill: var(--ink); }

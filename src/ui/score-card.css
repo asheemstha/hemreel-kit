@@ -1,0 +1,19 @@
+.hr-scorecard { display: flex; flex-direction: column; gap: 14px; padding: 16px 18px; background: var(--card-bg); border: 0;
+  border-radius: var(--r-card); box-shadow: var(--card-shadow); }
+.hr-scorecard__top { display: flex; gap: 18px; align-items: flex-start; }
+.hr-scorecard__score { display: flex; flex-direction: column; align-items: center; gap: 6px; flex: none; min-width: 76px; }
+.hr-scorecard__number { font: 600 56px/56px var(--font-ui); letter-spacing: -0.03em; color: var(--ink); }
+.hr-scorecard[data-band="weak"] .hr-scorecard__number { color: var(--ink-2); }
+.hr-scorecard__why { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.hr-scorecard__why-label { font: var(--text-caption); color: var(--ink-3); }
+.hr-scorecard__reason { font: 400 16px/24px var(--font-ui); color: var(--ink); }
+.hr-scorecard__signals { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.hr-scorecard__signal { display: inline-flex; align-items: center; gap: 5px; height: 26px; padding: 0 9px; border-radius: var(--r-chip); background: var(--sunk);
+  color: var(--ink-2); font: 500 12.5px/1 var(--font-ui); }
+.hr-scorecard__signal strong { color: var(--ink); font-weight: 600; }
+.hr-scorecard__info { display: flex; align-items: center; gap: 6px; font: 400 12.5px/16px var(--font-ui); color: var(--ink-3); }
+.hr-scorecard__info > svg { width: 14px; height: 14px; flex: none; }
+.hr-scorecard__unscored { display: flex; gap: 18px; align-items: center; }
+.hr-scorecard__dash { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 76px; height: 56px; border-radius: var(--r-control-lg);
+  border: 1px dashed var(--edge); background: var(--sunk); color: var(--ink-3); }
+.hr-scorecard__dash > svg { width: 24px; height: 24px; }

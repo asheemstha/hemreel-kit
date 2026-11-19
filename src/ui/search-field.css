@@ -1,0 +1,2 @@
+/* layout: fills the parent's width, like Field. The wrapper also holds the result count for assistive tech. */
+.hr-search { position: relative; min-width: 0; }

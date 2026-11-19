@@ -1,0 +1,9 @@
+.hr-score { display: inline-flex; align-items: center; gap: 5px; height: 22px; padding: 0 7px 0 6px; border-radius: var(--r-chip);
+  border: 1px solid transparent; font: 600 12px/1 var(--font-ui); white-space: nowrap; }
+.hr-score__word { font-weight: 500; }
+.hr-bars { flex: none; }
+.hr-score[data-band="strong"] { background: var(--ink); color: var(--on-ink); }
+.hr-score[data-band="maybe"] { background: var(--control-off); color: var(--ink); }
+.hr-score[data-band="weak"] { background: transparent; color: var(--ink-2); border: 1px dashed var(--edge); }
+/* layout: hugs its content inside any flex or grid parent; never wider than the parent */
+.hr-score { width: fit-content; max-width: 100%; }

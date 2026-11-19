@@ -1,0 +1,17 @@
+/* The whole 28 px row is the slider, so the target is never under 28 px tall. The ring is drawn on the thumb. */
+.hr-scrubber { position: relative; display: flex; align-items: center; flex: 1; min-width: 80px; height: 28px; padding: 0 8px; cursor: pointer; touch-action: none; outline: none; }
+.hr-scrubber[data-markers] { height: 40px; padding-top: 12px; }
+.hr-scrubber[aria-disabled] { cursor: default; opacity: .45; }
+.hr-scrubber:focus-visible { outline: none; box-shadow: none; }
+.hr-scrubber__track { position: relative; flex: 1; height: 4px; border-radius: var(--r-full); background: var(--stage-track); }
+.hr-scrubber__played { position: absolute; inset: 0 auto 0 0; border-radius: inherit; background: var(--stage-text); }
+.hr-scrubber__thumb { position: absolute; top: 50%; width: 16px; height: 16px; margin: -8px 0 0 -8px; border-radius: var(--r-full); background: var(--on-ink);
+  box-shadow: var(--stage-thumb-halo); transition: transform var(--dur-fast) var(--ease-out); }
+.hr-scrubber:hover .hr-scrubber__thumb, .hr-scrubber[data-dragging] .hr-scrubber__thumb { transform: scale(1.15); }
+.hr-scrubber[data-dragging] { cursor: grabbing; }
+.hr-scrubber:focus-visible .hr-scrubber__thumb { outline: var(--focus-outline-stage); outline-offset: 2px; box-shadow: var(--focus-halo-stage); }
+.hr-scrubber__marker { position: absolute; top: -3px; width: 2px; height: 10px; margin-left: -1px; border-radius: var(--r-full); background: var(--stage-muted); }
+.hr-scrubber__marker-label { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); color: var(--stage-muted); font: 500 10.5px/12px var(--font-ui); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.hr-scrubber__time { position: absolute; bottom: 22px; left: 50%; transform: translateX(-50%); padding: 3px 6px; border-radius: var(--r-sm); background: var(--stage-label-bg);
+  border: 0; color: var(--stage-text); font: var(--text-timecode); font-size: 11.5px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.hr-scrubber[data-markers] .hr-scrubber__time { bottom: 26px; }

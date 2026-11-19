@@ -1,0 +1,14 @@
+/* The whole 28 px row is the slider, so the target is never under 28 px tall. The focus ring is drawn on the thumb. */
+.hr-slider { width: 100%; min-width: 0; }
+.hr-slider[data-disabled] { opacity: .45; }
+.hr-slider__control { position: relative; display: flex; align-items: center; width: 100%; height: 28px; cursor: pointer; touch-action: none; }
+.hr-slider[data-disabled] .hr-slider__control { cursor: default; }
+.hr-slider__track { position: relative; width: 100%; height: 4px; border-radius: var(--r-full); background: var(--control-off); }
+.hr-slider__fill { border-radius: var(--r-full); background: var(--ink); }
+/* the same knob as the Toggle: white, lifted by a soft shadow, no outline */
+.hr-slider__thumb { width: 18px; height: 18px; border-radius: var(--r-full); background: var(--surface); box-shadow: var(--knob-shadow);
+  transition: transform var(--dur-fast) var(--ease-out); }
+.hr-slider__thumb[data-dragging] { transform: scale(1.12); }
+.hr-slider__thumb:has(:focus-visible) { outline: var(--focus-outline); outline-offset: 2px; box-shadow: var(--knob-shadow), var(--focus-halo); }
+/* marks: a tick under the track. The thumb stays inside the track, so a tick sits where the thumb's centre lands (9 px in at each end). */
+.hr-slider__mark { position: absolute; top: 23px; left: calc(9px + (100% - 18px) * var(--p)); width: 2px; height: 5px; margin-left: -1px; border-radius: var(--r-full); background: var(--edge); pointer-events: none; }

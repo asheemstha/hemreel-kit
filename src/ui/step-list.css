@@ -1,0 +1,7 @@
+.hr-steps { list-style: none; margin: 0; padding: 0; }
+.hr-steps__item { display: flex; gap: 12px; padding: 10px 0; }
+.hr-steps__item + .hr-steps__item { }
+.hr-steps__num { flex: none; width: 16px; font: 500 13px/20px var(--font-ui); color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.hr-steps__text { display: flex; flex-direction: column; min-width: 0; }
+.hr-steps__title { font: 500 14px/20px var(--font-ui); color: var(--ink); }
+.hr-steps__note { font: 400 12.5px/18px var(--font-ui); color: var(--ink-3); }

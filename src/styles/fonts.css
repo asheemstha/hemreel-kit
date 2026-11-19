@@ -1,0 +1,4 @@
+/* Self-hosted so the desktop app works offline. Families registered: "Inter Variable", "Stack Sans Notch Variable".
+   No monospace font: numbers, timecodes and keycaps use Inter with tabular figures. */
+@import '@fontsource-variable/inter/wght.css';
+@import '@fontsource-variable/stack-sans-notch/wght.css';

@@ -1,0 +1,8 @@
+.hr-divider { border: 0; height: 1px; margin: 0; background: var(--line); width: 100%; }
+.hr-divider[data-vertical] { width: 1px; height: auto; align-self: stretch; }
+.hr-divider[data-labelled] { display: flex; align-items: center; gap: 12px; height: auto; background: none; color: var(--ink-3); font: var(--text-caption); }
+.hr-divider[data-labelled]::before, .hr-divider[data-labelled]::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.hr-section-header { display: flex; align-items: baseline; gap: 10px; min-height: 28px; }
+.hr-section-header__title { font: 600 14px/20px var(--font-ui); color: var(--ink); }
+.hr-section-header__note { font: 400 13px/18px var(--font-ui); color: var(--ink-3); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hr-section-header__action { margin-left: auto; align-self: center; display: inline-flex; gap: 8px; }

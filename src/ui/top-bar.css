@@ -1,0 +1,7 @@
+.hr-topbar { display: flex; align-items: center; gap: 16px; height: var(--topbar-h); padding: 0 16px 0 24px; background: var(--topbar-bg);
+  border-bottom: 1px solid var(--chrome-edge); min-width: 0; }
+.hr-topbar__start { display: flex; align-items: center; gap: 16px; flex: 1; min-width: 0; }
+.hr-topbar__title { font: var(--text-heading); letter-spacing: -0.01em; color: var(--ink); white-space: nowrap; }
+.hr-topbar__note { font: 400 13px/18px var(--font-ui); color: var(--ink-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.hr-topbar__slot { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.hr-topbar__end { display: flex; align-items: center; gap: 12px; flex: none; }

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" preserveAspectRatio="xMidYMid slice">
+<rect width="1080" height="705" fill="#383E4C"/>
+<rect x="109" y="93" width="344" height="192" rx="10" fill="#545C70" opacity=".55"/>
+<rect x="640" y="49" width="163" height="302" rx="8" fill="#272B35" opacity=".7"/>
+<rect x="288" y="275" width="340" height="430" rx="60" fill="#1B1E26"/>
+<ellipse cx="458" cy="405" rx="92" ry="104" fill="#7A8398" opacity=".85"/>
+<path d="M258 705 C 278 555, 638 555, 658 705 Z" fill="#545C70"/>
+<rect x="0" y="699" width="1080" height="6" fill="#1B1E26"/>
+<rect y="705" width="1080" height="503" fill="#7A8398" opacity=".55"/>
+<rect y="1208" width="1080" height="712" fill="#272B35"/>
+<rect x="0" y="1119" width="53" height="89" fill="#383E4C"/>
+<rect x="61" y="1118" width="88" height="90" fill="#383E4C"/>
+<rect x="157" y="958" width="91" height="250" fill="#383E4C"/>
+<rect x="256" y="1139" width="135" height="69" fill="#383E4C"/>
+<rect x="399" y="1131" width="131" height="77" fill="#383E4C"/>
+<rect x="538" y="1079" width="69" height="129" fill="#383E4C"/>
+<rect x="615" y="1109" width="146" height="99" fill="#383E4C"/>
+<rect x="769" y="954" width="79" height="254" fill="#383E4C"/>
+<rect x="856" y="1039" width="143" height="169" fill="#383E4C"/>
+<rect x="1007" y="992" width="61" height="216" fill="#383E4C"/>
+<rect x="1076" y="1112" width="104" height="96" fill="#383E4C"/>
+<path d="M389 1208 L429 1208 L1020 1920 L60 1920 Z" fill="#1B1E26"/>
+<rect x="408" y="1223" width="7" height="21" fill="#7A8398" opacity=".7"/>
+<rect x="415" y="1266" width="8" height="25" fill="#7A8398" opacity=".7"/>
+<rect x="427" y="1339" width="12" height="31" fill="#7A8398" opacity=".7"/>
+<rect x="444" y="1440" width="16" height="40" fill="#7A8398" opacity=".7"/>
+<rect x="465" y="1571" width="21" height="51" fill="#7A8398" opacity=".7"/>
+<rect x="491" y="1731" width="28" height="64" fill="#7A8398" opacity=".7"/>
+<rect x="316" y="1456" width="241" height="126" rx="22" fill="#545C70"/>
+</svg>

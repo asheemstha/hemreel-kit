@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" preserveAspectRatio="xMidYMid slice">
+<rect width="1080" height="705" fill="#33495A"/>
+<rect x="173" y="93" width="297" height="206" rx="10" fill="#4E6A80" opacity=".55"/>
+<rect x="694" y="41" width="218" height="390" rx="8" fill="#253441" opacity=".7"/>
+<rect x="450" y="275" width="340" height="430" rx="60" fill="#1A2530"/>
+<ellipse cx="620" cy="405" rx="92" ry="104" fill="#7893A8" opacity=".85"/>
+<path d="M420 705 C 440 555, 800 555, 820 705 Z" fill="#4E6A80"/>
+<rect x="0" y="699" width="1080" height="6" fill="#1A2530"/>
+<rect y="705" width="1080" height="518" fill="#7893A8" opacity=".55"/>
+<rect y="1223" width="1080" height="697" fill="#253441"/>
+<rect x="0" y="1092" width="136" height="131" fill="#33495A"/>
+<rect x="144" y="1157" width="66" height="66" fill="#33495A"/>
+<rect x="218" y="1065" width="83" height="158" fill="#33495A"/>
+<rect x="309" y="1056" width="147" height="167" fill="#33495A"/>
+<rect x="464" y="1035" width="84" height="188" fill="#33495A"/>
+<rect x="556" y="1000" width="92" height="223" fill="#33495A"/>
+<rect x="656" y="978" width="139" height="245" fill="#33495A"/>
+<rect x="803" y="1128" width="103" height="95" fill="#33495A"/>
+<rect x="914" y="1148" width="122" height="75" fill="#33495A"/>
+<rect x="1044" y="1113" width="69" height="110" fill="#33495A"/>
+<path d="M437 1223 L477 1223 L1020 1920 L60 1920 Z" fill="#1A2530"/>
+<rect x="455" y="1237" width="7" height="21" fill="#7893A8" opacity=".7"/>
+<rect x="460" y="1280" width="8" height="25" fill="#7893A8" opacity=".7"/>
+<rect x="466" y="1351" width="12" height="31" fill="#7893A8" opacity=".7"/>
+<rect x="476" y="1451" width="16" height="40" fill="#7893A8" opacity=".7"/>
+<rect x="489" y="1579" width="21" height="51" fill="#7893A8" opacity=".7"/>
+<rect x="504" y="1735" width="28" height="64" fill="#7893A8" opacity=".7"/>
+<rect x="572" y="1447" width="242" height="144" rx="22" fill="#4E6A80"/>
+<text x="540.0" y="855" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-weight="800" font-size="64" fill="#FFFFFF" stroke="#000000" stroke-width="10" paint-order="stroke">THE COPS GAVE UP</text>
+</svg>

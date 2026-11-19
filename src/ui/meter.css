@@ -1,0 +1,10 @@
+.hr-meter { --h: 6px; position: relative; width: 100%; height: var(--h); border-radius: var(--r-full); background: var(--line); overflow: hidden; }
+.hr-meter[data-h="5"] { --h: 5px; }
+.hr-meter[data-h="8"] { --h: 8px; }
+.hr-meter__fill { position: absolute; inset: 0 auto 0 0; border-radius: inherit; background: var(--ink); transition: width var(--dur-base) var(--ease-in-out); }
+.hr-meter[data-variant="due"] { background: var(--due-track); }
+.hr-meter[data-variant="due"] .hr-meter__fill { background: var(--due); }
+.hr-meter[data-variant="stage"] { background: var(--stage-track); }
+.hr-meter[data-variant="stage"] .hr-meter__fill { background: var(--stage-text); }
+.hr-meter[data-indeterminate] .hr-meter__fill { width: 35%; animation: hr-meter-slide var(--dur-pulse) var(--ease-in-out) infinite; }
+@keyframes hr-meter-slide { from { transform: translateX(-100%); } to { transform: translateX(290%); } }

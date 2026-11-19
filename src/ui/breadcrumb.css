@@ -1,0 +1,10 @@
+/* layout: hugs its crumbs; wraps when they do not fit */
+.hr-crumbs { width: fit-content; max-width: 100%; }
+.hr-crumbs__list { display: flex; flex-wrap: wrap; align-items: center; gap: 2px; margin: 0; padding: 0; list-style: none; }
+.hr-crumbs__item { display: inline-flex; align-items: center; gap: 2px; min-width: 0; }
+.hr-crumbs__sep { flex: none; width: 14px; height: 14px; color: var(--ink-3); }
+.hr-crumbs__link, .hr-crumbs__text { display: inline-flex; align-items: center; min-height: 28px; padding: 2px 8px; border-radius: var(--r-chip); font: 500 13px/18px var(--font-ui); }
+.hr-crumbs__link { color: var(--ink-2); text-decoration: none; transition: background-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out); }
+.hr-crumbs__link:hover { background: var(--sunk); color: var(--ink); }
+.hr-crumbs__text { color: var(--ink-2); }
+.hr-crumbs__text[data-current] { color: var(--ink); font-weight: 600; }

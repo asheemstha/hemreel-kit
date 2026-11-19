@@ -1,0 +1,13 @@
+.hr-avatar { --size: 28px; --gap-bg: var(--surface); display: inline-flex; align-items: center; justify-content: center; flex: none;
+  width: var(--size); height: var(--size); border-radius: var(--r-full); background: var(--control-off); color: var(--ink);
+  border: 0; font-family: var(--font-ui); font-weight: 600; font-size: calc(var(--size) * .43); line-height: 1; user-select: none; }
+.hr-avatar[data-size="20"] { --size: 20px; }
+.hr-avatar[data-size="22"] { --size: 22px; }
+.hr-avatar[data-size="26"] { --size: 26px; }
+.hr-avatar[data-size="34"] { --size: 34px; }
+.hr-avatar[data-size="40"] { --size: 40px; }
+.hr-avatar[data-on="side"] { --gap-bg: var(--side); }
+.hr-avatar[data-on="bg"] { --gap-bg: var(--bg); }
+.hr-avatar[data-on="accent-tint"] { --gap-bg: var(--accent-tint); }
+.hr-avatar[data-on="nav-selected"] { --gap-bg: var(--nav-selected); }
+.hr-avatar[data-live] { border-color: transparent; box-shadow: 0 0 0 2px var(--gap-bg), 0 0 0 4px var(--live); }

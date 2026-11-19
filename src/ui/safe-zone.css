@@ -1,0 +1,9 @@
+.hr-zones { position: absolute; inset: 0; pointer-events: none; }
+.hr-zones__zone { position: absolute; background: repeating-linear-gradient(135deg, var(--zone-light) 0 5px, var(--zone-dark) 5px 10px); }
+.hr-zones__zone[data-edge="bottom"] { border-bottom: 1.5px dashed var(--on-ink); }
+.hr-zones__zone[data-edge="top"] { border-top: 1.5px dashed var(--on-ink); }
+.hr-zones__zone[data-edge="left"] { border-left: 1.5px dashed var(--on-ink); border-top: 1.5px dashed var(--on-ink); }
+.hr-zones__label { position: absolute; left: 6px; padding: 2px 5px; border-radius: var(--r-sm); background: var(--stage-label-bg); color: var(--on-ink);
+  font: 500 10.5px/14px var(--font-ui); white-space: nowrap; max-width: calc(100% - 12px); overflow: hidden; text-overflow: ellipsis; font-variant-numeric: tabular-nums; }
+.hr-zones__label[data-at="bottom-left"] { bottom: 5px; }
+.hr-zones__label[data-at="top-left"] { top: 5px; }

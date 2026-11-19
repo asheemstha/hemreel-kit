@@ -1,0 +1,8 @@
+/* a face is the icon and its label. Both faces share one grid cell, so the button is as wide as the wider one and never jumps; each is centred in it */
+.hr-copy__faces { display: inline-grid; justify-items: center; }
+.hr-copy__faces > .hr-copy__face { grid-area: 1 / 1; }
+.hr-copy__face { display: inline-flex; align-items: center; gap: 8px; }
+.hr-copy__face[aria-hidden] { visibility: hidden; }
+.hr-copy__face > svg { flex: none; width: 16px; height: 16px; }
+/* the check arrives with a small pop */
+.hr-copy__pop { animation: hr-pop var(--dur-fast) var(--ease-out); }

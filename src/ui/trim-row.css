@@ -1,0 +1,7 @@
+.hr-trim { display: flex; flex-direction: column; gap: 6px; }
+.hr-trim__row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.hr-trim__label { font: 600 13px/18px var(--font-ui); color: var(--ink); min-width: 32px; }
+.hr-trim__length { margin-left: auto; font: var(--text-timecode); color: var(--ink); font-variant-numeric: tabular-nums; }
+.hr-trim__length[data-short] { color: var(--fail); }
+.hr-trim__warn { display: flex; align-items: center; gap: 6px; font: 500 12.5px/17px var(--font-ui); color: var(--fail); }
+.hr-trim__warn > svg { width: 14px; height: 14px; flex: none; }

@@ -1,0 +1,5 @@
+/* layout: a short input (a timecode is at most ten characters) under a full-width label, help and error line */
+.hr-timecode { min-width: 0; }
+.hr-timecode .hr-field__control { width: 132px; max-width: 100%; }
+.hr-timecode[data-block] .hr-field__control { width: 100%; }
+.hr-timecode .hr-field__input { font-variant-numeric: tabular-nums; }

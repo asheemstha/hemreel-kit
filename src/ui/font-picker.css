@@ -1,0 +1,5 @@
+/* each font is drawn at its own regular weight, so heavy faces (Arial Black, Impact) and light ones read as they will burn in */
+.hr-font__name { font-size: 15px; line-height: 20px; font-weight: 400; }
+.hr-font__item { min-height: 36px; }
+.hr-font__item[data-selected] { font-weight: 400; }
+.hr-font__trigger { min-width: 168px; }

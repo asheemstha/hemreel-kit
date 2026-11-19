@@ -1,0 +1,10 @@
+.hr-empty { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; padding: 40px 24px; }
+.hr-empty__icon { display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: var(--r-card); background: var(--sunk); color: var(--ink-2); margin-bottom: 4px; }
+.hr-empty__icon > svg { width: 26px; height: 26px; }
+.hr-empty__title { font: var(--text-title); letter-spacing: -0.02em; color: var(--ink); }
+.hr-empty__body { font: 400 15px/22px var(--font-ui); color: var(--ink-2); max-width: 460px; }
+.hr-empty__actions { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; justify-content: center; }
+.hr-empty__hints { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 24px; margin: 16px 0 0; padding: 0; list-style: none; }
+.hr-empty__hint { display: inline-flex; align-items: center; gap: 6px; font: 400 13px/18px var(--font-ui); color: var(--ink-3); }
+.hr-empty__hint-icon { display: inline-flex; }
+.hr-empty__hint-icon > svg { width: 14px; height: 14px; }

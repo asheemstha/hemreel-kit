@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" preserveAspectRatio="xMidYMid slice">
+<rect width="1080" height="705" fill="#3B4654"/>
+<rect x="43" y="100" width="248" height="257" rx="10" fill="#5C6B7D" opacity=".55"/>
+<rect x="720" y="39" width="207" height="305" rx="8" fill="#28303A" opacity=".7"/>
+<rect x="305" y="275" width="340" height="430" rx="60" fill="#1C2229"/>
+<ellipse cx="475" cy="405" rx="92" ry="104" fill="#8494A6" opacity=".85"/>
+<path d="M275 705 C 295 555, 655 555, 675 705 Z" fill="#5C6B7D"/>
+<rect x="0" y="699" width="1080" height="6" fill="#1C2229"/>
+<rect y="705" width="1080" height="408" fill="#8494A6" opacity=".55"/>
+<rect y="1113" width="1080" height="807" fill="#28303A"/>
+<rect x="0" y="994" width="120" height="119" fill="#3B4654"/>
+<rect x="128" y="860" width="143" height="253" fill="#3B4654"/>
+<rect x="279" y="1016" width="69" height="97" fill="#3B4654"/>
+<rect x="356" y="1045" width="146" height="68" fill="#3B4654"/>
+<rect x="510" y="1038" width="136" height="75" fill="#3B4654"/>
+<rect x="654" y="994" width="69" height="119" fill="#3B4654"/>
+<rect x="731" y="866" width="120" height="247" fill="#3B4654"/>
+<rect x="859" y="919" width="109" height="194" fill="#3B4654"/>
+<rect x="976" y="1001" width="104" height="112" fill="#3B4654"/>
+<path d="M663 1113 L703 1113 L1020 1920 L60 1920 Z" fill="#1C2229"/>
+<rect x="677" y="1129" width="7" height="21" fill="#8494A6" opacity=".7"/>
+<rect x="667" y="1179" width="8" height="25" fill="#8494A6" opacity=".7"/>
+<rect x="651" y="1261" width="12" height="31" fill="#8494A6" opacity=".7"/>
+<rect x="628" y="1377" width="16" height="40" fill="#8494A6" opacity=".7"/>
+<rect x="599" y="1525" width="21" height="51" fill="#8494A6" opacity=".7"/>
+<rect x="564" y="1706" width="28" height="64" fill="#8494A6" opacity=".7"/>
+<rect x="347" y="1470" width="202" height="135" rx="22" fill="#5C6B7D"/>
+<text x="540.0" y="855" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-weight="800" font-size="64" fill="#FFFFFF" stroke="#000000" stroke-width="10" paint-order="stroke">CHAT CALLED IT</text>
+</svg>

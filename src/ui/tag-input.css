@@ -1,0 +1,18 @@
+/* one filled box holding the chips and the text field. It wraps onto more lines as tags are added */
+.hr-tags { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; min-height: 40px; padding: 8px; border-radius: var(--r-field); background: var(--field-bg); cursor: text;
+  transition: background-color var(--dur-fast) var(--ease-out); }
+.hr-tags:hover:not([data-disabled]) { background: var(--btn2-hover); }
+/* the group is only there for meaning: its chips and field lay out as children of the box */
+.hr-tags__group { display: contents; }
+/* the ring goes round the whole box while the text field has focus; chips keep their own ring */
+.hr-tags:has(.hr-tags__input:focus-visible) { outline: var(--focus-outline); outline-offset: 1px; box-shadow: var(--focus-halo); }
+.hr-tags[data-disabled] { opacity: .45; cursor: default; }
+.hr-field[data-invalid] .hr-tags { background: var(--fail-tint); }
+/* chips are white pills here: the grey chip fill would vanish into the grey field */
+.hr-tags .hr-chip { height: 24px; background: var(--surface); color: var(--ink); }
+/* a tag that was just added pops in */
+.hr-tags .hr-tags__new { animation: hr-pop var(--dur-fast) var(--ease-out); }
+.hr-tags .hr-chip__icon { color: var(--ink-3); }
+.hr-tags__input { flex: 1 1 80px; min-width: 80px; height: 24px; padding: 0 4px; border: 0; background: transparent; color: var(--ink); font: 400 14px/20px var(--font-ui); }
+.hr-tags__input:focus-visible { outline: none; box-shadow: none; }
+.hr-tags__input::placeholder { color: var(--ink-3); opacity: 1; }

@@ -1,0 +1,2 @@
+.hr-spinner { flex: none; color: var(--ink-2); animation: hr-spin var(--dur-spin) linear infinite; }
+.hr-spinner[data-stage] { color: var(--stage-text); }

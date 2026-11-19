@@ -1,0 +1,9 @@
+.hr-check-row { display: flex; align-items: center; gap: 12px; min-height: 46px; padding: 6px 16px; }
+.hr-check-row__icon { display: inline-flex; flex: none; color: var(--ink-3); }
+.hr-check-row__icon > svg { width: 16px; height: 16px; }
+.hr-check-row[data-status="ok"] .hr-check-row__icon { color: var(--ok); }
+.hr-check-row[data-status="warning"] .hr-check-row__icon { color: var(--due); }
+.hr-check-row[data-status="failed"] .hr-check-row__icon { color: var(--fail); }
+.hr-check-row__name { flex: 1; min-width: 0; font: 500 14px/20px var(--font-ui); color: var(--ink); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hr-check-row__value { font: 400 13px/18px var(--font-ui); color: var(--ink-2); white-space: nowrap; }
+.hr-check-row[data-status="running"] .hr-chip__icon > svg { animation: hr-spin var(--dur-spin) linear infinite; }

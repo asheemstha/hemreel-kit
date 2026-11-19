@@ -1,0 +1,11 @@
+.hr-spend { display: grid; grid-template-columns: 148px minmax(0, 1fr); gap: 16px; align-items: end; }
+.hr-spend__meter { display: flex; flex-direction: column; gap: 6px; padding-bottom: 2px; min-width: 0; }
+.hr-spend__used { font: 500 13px/18px var(--font-ui); color: var(--ink); }
+.hr-spend__left { display: flex; align-items: center; gap: 6px; font: 400 12.5px/17px var(--font-ui); color: var(--ink-3); }
+.hr-spend__left > svg { flex: none; width: 14px; height: 14px; }
+.hr-spend__left strong { font-weight: 600; }
+.hr-spend[data-state="under"] .hr-spend__left > svg { color: var(--ok); }
+.hr-spend[data-state="near"] .hr-spend__left { color: var(--due); }
+.hr-spend[data-state="cap"] .hr-spend__left { color: var(--fail); }
+.hr-spend[data-state="cap"] .hr-meter { background: var(--fail-tint); }
+.hr-spend[data-state="cap"] .hr-meter__fill { background: var(--fail); }

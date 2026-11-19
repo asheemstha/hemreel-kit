@@ -1,0 +1,34 @@
+.hr-clip-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(168px, 1fr)); gap: 16px; width: 100%; min-width: 0; }
+.hr-clip-grid__item { display: flex; min-width: 0; }
+
+.hr-clip-card { position: relative; display: flex; flex-direction: column; width: 100%; min-width: 0; padding: 8px; border-radius: var(--r-card); background: var(--card-bg); box-shadow: var(--card-shadow); }
+/* the still: footage on the neutral stage colour. No brand colour touches it */
+.hr-clip-card__still { position: relative; display: flex; align-items: center; justify-content: center; width: 100%; aspect-ratio: 9 / 16; overflow: hidden; border-radius: var(--r-control-lg);
+  background: var(--stage); color: var(--stage-muted); transition: box-shadow var(--dur-fast) var(--ease-out), opacity var(--dur-fast) var(--ease-out); }
+.hr-clip-card__still > img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hr-clip-card__empty { width: 24px; height: 24px; }
+/* selection is a ring around the still, never a stripe on one side */
+.hr-clip-card[data-selected] .hr-clip-card__still { box-shadow: var(--ring-selected); }
+.hr-clip-card[data-dim] .hr-clip-card__still { opacity: .6; }
+.hr-clip-card[data-dim] .hr-clip-card__title { color: var(--ink-2); }
+.hr-clip-card__len { position: absolute; left: 8px; bottom: 8px; padding: 3px 6px; border-radius: var(--r-sm); background: var(--stage-label-bg); color: var(--on-ink); font: 600 11.5px/14px var(--font-ui); }
+/* the score sits on its own white chip so every band reads on any footage */
+.hr-clip-card__score { position: absolute; top: 16px; right: 16px; z-index: 1; display: inline-flex; border-radius: var(--r-chip); background: var(--surface); pointer-events: none; }
+/* the checkbox sits on a white chip too. It shows on hover and focus, and stays while anything is selected */
+.hr-clip-card__check { position: absolute; top: 16px; left: 16px; z-index: 2; display: inline-flex; padding: 5px; border-radius: var(--r-chip); background: var(--surface); opacity: 0;
+  transition: opacity var(--dur-fast) var(--ease-out); }
+.hr-clip-card:hover .hr-clip-card__check, .hr-clip-card:focus-within .hr-clip-card__check, .hr-clip-card[data-selecting] .hr-clip-card__check, .hr-clip-card[data-selected] .hr-clip-card__check { opacity: 1; }
+
+.hr-clip-card__body { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; flex: 1; min-width: 0; padding: 10px 4px 4px; }
+.hr-clip-card__open { max-width: 100%; margin: 0; padding: 0; border: 0; border-radius: var(--r-sm); background: transparent; color: inherit; text-align: left; }
+/* a click anywhere on the still opens the clip too: the title button stretches over it */
+.hr-clip-card__open::after { content: ""; position: absolute; top: 8px; left: 8px; right: 8px; aspect-ratio: 9 / 16; border-radius: var(--r-control-lg); }
+.hr-clip-card__title { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; font: 600 14px/19px var(--font-ui); color: var(--ink); overflow-wrap: anywhere; }
+.hr-clip-card__open:hover .hr-clip-card__title { text-decoration: underline; text-underline-offset: 2px; }
+.hr-clip-card__meta { font: 400 12.5px/17px var(--font-ui); color: var(--ink-3); }
+.hr-clip-card__estimate { font: 500 12.5px/17px var(--font-ui); color: var(--ink-2); }
+.hr-clip-card__chips { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 2px; }
+.hr-clip-card__actions { display: flex; flex-wrap: wrap; gap: 6px; width: 100%; margin-top: auto; padding-top: 8px; }
+
+.hr-clip-card[data-loading] .hr-clip-card__still { background: var(--line); animation: hr-pulse var(--dur-pulse) var(--ease-in-out) infinite; }
+.hr-clip-card[data-loading] .hr-clip-card__body { gap: 8px; width: 100%; padding-bottom: 8px; }

@@ -1,0 +1,37 @@
+.hr-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: var(--h-md); padding: 0 12px;
+  border: 1px solid transparent; border-radius: var(--r-button); font: 500 14px/1 var(--font-ui); white-space: nowrap; text-decoration: none;
+  transition: background-color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out), transform var(--dur-press) var(--ease-out); }
+/* hug the content; never wider than the parent. Pass `block` for full width. */
+.hr-btn { width: fit-content; max-width: 100%; }
+.hr-btn[data-block] { width: 100%; }
+.hr-btn:active:not(:disabled) { transform: scale(.97); }
+.hr-btn:disabled { opacity: .45; }
+.hr-btn__icon { display: inline-flex; flex: none; }
+.hr-btn__icon > svg { width: 16px; height: 16px; }
+
+.hr-btn[data-size="sm"] { height: var(--h-sm); padding: 0 10px; font-size: 13px; }
+.hr-btn[data-size="lg"] { height: var(--h-lg); padding: 0 16px; font-size: 15px; border-radius: var(--r-button-lg); }
+.hr-btn[data-size="xl"] { height: var(--h-xl); padding: 0 20px; font-size: 17px; border-radius: var(--r-button-xl); }
+.hr-btn[data-size="xl"] .hr-btn__icon > svg { width: 18px; height: 18px; }
+
+.hr-btn[data-kind="primary"] { background: var(--accent); color: var(--on-accent); border-color: var(--btn-primary-edge); font-weight: 600;
+  box-shadow: var(--shadow-primary); }
+.hr-btn[data-kind="primary"]:hover:not(:disabled) { background: var(--accent-hover); }
+.hr-btn[data-kind="primary"]:active:not(:disabled) { background: var(--accent-active); }
+
+.hr-btn[data-kind="secondary"] { background: var(--btn2-bg); color: var(--ink); border-color: var(--btn2-edge); box-shadow: var(--btn2-shadow); }
+.hr-btn[data-kind="secondary"]:hover:not(:disabled) { background: var(--btn2-hover); }
+
+.hr-btn[data-kind="ghost"] { background: transparent; color: var(--ink-2); }
+.hr-btn[data-kind="ghost"]:hover:not(:disabled) { background: var(--sunk); color: var(--ink); }
+
+.hr-btn[data-kind="dark"] { background: var(--ink); color: var(--on-ink); border-color: var(--ink); font-weight: 600; }
+.hr-btn[data-kind="dark"]:hover:not(:disabled) { background: var(--ink-2); border-color: var(--ink-2); }
+
+.hr-btn[data-kind="danger"] { background: var(--fail-tint); color: var(--fail); border-color: transparent; }
+.hr-btn[data-kind="danger"]:hover:not(:disabled) { background: var(--fail); color: var(--on-ink); }
+
+.hr-btn[data-kind="stage"] { background: var(--stage-2); color: var(--stage-text); border-color: transparent; }
+.hr-btn[data-kind="stage"]:hover:not(:disabled) { background: var(--stage-track); }
+
+.hr-btn[data-loading] .hr-btn__icon > svg { animation: hr-spin var(--dur-spin) linear infinite; }
